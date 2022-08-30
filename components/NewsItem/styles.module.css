@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    margin: 10px;
+}
+
+.type {
+    display: inline-block;
+    text-align: center;
+    width: 64px;
+    border-radius: 2px;
+    font-size: 12px;
+    margin-right: 4px;
+    padding: 4px 0px 2px 0px;
+    white-space: nowrap;
+}

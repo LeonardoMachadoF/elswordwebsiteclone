@@ -1,0 +1,12 @@
+.container {
+    overflow-x: hidden;
+    margin-top: 90px;
+}
+
+.carrousel {
+    display: flex;
+}
+
+.carrousel img {
+    width: 100vw;
+}
