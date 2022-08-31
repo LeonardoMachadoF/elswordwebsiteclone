@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import { Banner } from '../components/Banner'
+import { Characters } from '../components/Characters'
 import { Header } from '../components/Header'
 import { NewsAndGuides } from '../components/NewsAndGuides'
 import { NewsItem } from '../components/NewsItem'
@@ -38,6 +39,7 @@ const Home: NextPage = () => {
                         <NewsAndGuides category='GUIDES' imageUrl='   /assets/banner-guides.jpg' />
                     </div>
                 </div>
+                <Characters />
             </main>
 
             <div className={styles.background} />

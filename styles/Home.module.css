@@ -4,14 +4,14 @@
 }
 
 .mainArea {
-    width: 1200px;
+    width: 75%;
     margin: auto;
     height: 1200px;
 }
 
 .newsAndUpdates .label {
     color: #fce054;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 800;
     text-shadow: 2px 2px 2px #000;
     padding: 27px 0px;
@@ -20,6 +20,8 @@
 .newsAndUpdates {
     display: flex;
     flex-direction: column;
+    max-width: 1000px;
+    margin: auto;
 }
 
 .mainNewsAndUpdates {
@@ -28,7 +30,7 @@
 }
 
 .mainNewsAndUpdates .announcements {
-    width: 230px;
+    width: 260px;
     background-color: black;
     height: 400px;
 }

@@ -1,0 +1,9 @@
+.characters {
+    display: flex;
+}
+
+.label {
+    font-weight: 800;
+    font-size: 20px;
+    margin: 60px 0px 20px 10px;
+}
