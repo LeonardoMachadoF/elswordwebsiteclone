@@ -24,12 +24,20 @@
 
 .mainNewsAndUpdates {
     display: flex;
+    justify-content: space-between;
 }
 
 .mainNewsAndUpdates .announcements {
     width: 230px;
     background-color: black;
     height: 400px;
+}
+
+.announcementsTitle {
+    color: #eeb415;
+    padding: 8px 16px;
+    font-weight: 700;
+    font-size: 16px;
 }
 
 .background {

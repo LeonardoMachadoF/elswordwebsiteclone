@@ -1,0 +1,23 @@
+.container {
+    width: 320px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    padding: 8px 16px;
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+    background-color: #fff;
+}
+
+.image {
+    height: 362px;
+}
+
+.image img {
+    height: 100%;
+    width: 100%;
+}

@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Banner } from '../components/Banner'
 import { Header } from '../components/Header'
+import { NewsAndGuides } from '../components/NewsAndGuides'
 import { NewsItem } from '../components/NewsItem'
 import styles from '../styles/Home.module.css'
 
@@ -22,7 +23,7 @@ const Home: NextPage = () => {
                     <div className={styles.label}>NEWS & UPDATES</div>
                     <div className={styles.mainNewsAndUpdates}>
                         <div className={styles.announcements}>
-                            <div>ANNOUNCEMENTS</div>
+                            <div className={styles.announcementsTitle}>ANNOUNCEMENTS</div>
                             <div className={styles.news}>
                                 <NewsItem type='Event' title='2022 Summer Special Events' />
                                 <NewsItem type='Item Mall' title='New Noah IB: Nereid + Nereid Eye' />
@@ -33,8 +34,8 @@ const Home: NextPage = () => {
                                 <NewsItem type='Item Mall' title='Costume Premium Package Resale' />
                             </div>
                         </div>
-                        <div className={styles.news}></div>
-                        <div className={styles.guides}></div>
+                        <NewsAndGuides category='NEWS' imageUrl='/assets/news.jpg' />
+                        <NewsAndGuides category='GUIDES' imageUrl='   /assets/banner-guides.jpg' />
                     </div>
                 </div>
             </main>
