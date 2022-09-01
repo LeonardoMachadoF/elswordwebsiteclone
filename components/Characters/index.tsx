@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Character, characters } from '../../libs/characters';
 import { CharacterArea } from '../CharacterArea';
+import { Portrait } from '../Portrait';
 import styles from './styles.module.css';
 
 export const Characters = () => {
@@ -20,16 +21,14 @@ export const Characters = () => {
                     <div className={styles.portraitArea}>
                         {characters.map((i: Character) => {
                             return (
-                                <div
-                                    key={i.className.name}
-                                    className={styles.portrait}
-                                    style={{ filter: activeCharacter === i.name ? 'grayscale(0%)' : 'grayscale(100%)' }}
-                                    onClick={() => setActiveCharacter(i.name)}
-                                >
-                                    <img className={styles.img} src={i.portrait} alt="" />
-                                </div>
+                                <Portrait
+                                    char={i}
+                                    setActiveCharacter={setActiveCharacter}
+                                    activeCharacter={activeCharacter}
+                                />
                             )
                         })}
+
                     </div>
                 </div>
                 <div className={styles.imgCharacter}>

@@ -1,0 +1,12 @@
+.portrait {
+    transition: all ease .4s;
+    width: fit-content;
+}
+
+.portrait:hover {
+    margin-top: -12px;
+}
+
+.portrait .img {
+    width: 120px;
+}
