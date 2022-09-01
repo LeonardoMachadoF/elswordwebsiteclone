@@ -5,6 +5,7 @@
 
 .mainArea {
     width: 75%;
+    max-width: 1400px;
     margin: auto;
     height: 1200px;
 }
@@ -53,4 +54,10 @@
     bottom: 0;
     z-index: -1;
     margin-top: 90px;
+}
+
+@media (max-width: 1350px) {
+    .mainArea {
+        width: 100%;
+    }
 }
