@@ -6,7 +6,7 @@ import styles from './styles.module.css';
 
 export const Characters = () => {
     const [activeCharacter, setActiveCharacter] = useState('Elsword');
-    const [chosenCharacter, setChosenCharacter] = useState<Character>();
+    const [chosenCharacter, setChosenCharacter] = useState<Character>(characters[0]);
 
     useEffect(() => {
         const char = characters.filter((i: Character) => i.name === activeCharacter ? i : '');
@@ -22,6 +22,7 @@ export const Characters = () => {
                         {characters.map((i: Character) => {
                             return (
                                 <Portrait
+                                    key={i.classes[0].name}
                                     char={i}
                                     setActiveCharacter={setActiveCharacter}
                                     activeCharacter={activeCharacter}

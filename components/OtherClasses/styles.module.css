@@ -1,0 +1,41 @@
+.otherClasse {
+    width: 25%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all ease .2s;
+}
+
+.otherClasse:hover {
+    margin-top: -16px;
+}
+
+.otherClasse:hover .otherImage img {
+    filter: grayscale(0%) !important;
+}
+
+.otherImage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.otherImage img {
+    width: 80%;
+}
+
+.roundPoint {
+    width: 14px;
+    height: 14px;
+    border-radius: 45%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.roundPoint span {
+    font-size: 6px;
+    margin-left: 2px;
+}
