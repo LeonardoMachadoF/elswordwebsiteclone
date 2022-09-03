@@ -36,7 +36,7 @@ export const Header = () => {
             </div>
             <div
                 className={styles.hamb}
-                style={{ height: '20px', justifyContent: 'space-between', flexDirection: 'column', marginRight: '20px', cursor: 'pointer' }}
+                style={{ height: '40px', width: '60px', justifyContent: 'space-between', flexDirection: 'column', cursor: 'pointer', alignItems: 'center', paddingTop: '10px', paddingBottom: '10px' }}
                 onClick={handleMenuClick}
             >
                 <div style={{ backgroundColor: '#ccc', height: '2px', width: '20px' }}></div>
