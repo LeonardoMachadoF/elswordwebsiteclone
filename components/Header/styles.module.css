@@ -54,3 +54,13 @@
     cursor: pointer;
     margin-right: 16px;
 }
+
+@media (max-width: 1000px) {
+    .navArea .nav {
+        display: none;
+    }
+
+    .container .playArea {
+        display: none;
+    }
+}

@@ -32,9 +32,9 @@ export const Characters = () => {
 
                     </div>
                 </div>
-                <div className={styles.imgCharacter}>
-                    <CharacterArea character={chosenCharacter} />
-                </div>
+            </div>
+            <div className={styles.rightArea}>
+                <CharacterArea character={chosenCharacter} />
             </div>
         </div>
     )

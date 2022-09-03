@@ -8,10 +8,18 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.characterImage img {
+    max-width: 100%;
 }
 
 .characterInfo {
-    width: 430px;
+    max-width: 430px;
+    width: 98%;
     padding: 12px;
     background-color: rgba(0, 0, 0, 0.3);
     display: flex;
@@ -51,3 +59,5 @@
     padding-top: 10px;
     display: flex;
 }
+
+@media(max-width: 760px) {}

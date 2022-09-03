@@ -29,7 +29,7 @@ export const CharacterArea = ({ character }: Props) => {
                 <div className={styles.description}>{character.classes[(activeClass - 1)].description}</div>
 
                 <div>
-                    {url ? <ReactPlayer url={url} width={400} /> : ''}
+                    {url ? <ReactPlayer url={url} style={{ margin: 'auto' }} width={`98%`} /> : ''}
                 </div>
 
                 <div className={styles.classesArea}>
