@@ -1,13 +1,20 @@
 import styles from './styles.module.css';
 import { CaretDown, MagnifyingGlass } from 'phosphor-react';
 import { NavItem } from '../NavItem';
+import { useState } from 'react';
 
 export const Header = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const handleMenuClick = () => {
+        setMenuOpen(!menuOpen)
+    };
+
     return (
         <div className={styles.container}>
             <div className={styles.navArea}>
                 <img src="/assets/es-logo.png" alt="" className={styles.logo} />
-                <nav className={styles.nav}>
+                <nav className={styles.nav} style={{ display: menuOpen ? 'flex' : 'none' }}>
                     <NavItem label='ABOUT' icon={<CaretDown size={16} color="#fff" />} />
                     <NavItem label='NEWS' />
                     <NavItem label='CHARACTERS' />
@@ -27,6 +34,15 @@ export const Header = () => {
                     <MagnifyingGlass size={16} color="#fff" weight='bold' />
                 </div>
             </div>
-        </div>
+            <div
+                className={styles.hamb}
+                style={{ height: '20px', justifyContent: 'space-between', flexDirection: 'column', marginRight: '20px', cursor: 'pointer' }}
+                onClick={handleMenuClick}
+            >
+                <div style={{ backgroundColor: '#ccc', height: '2px', width: '20px' }}></div>
+                <div style={{ backgroundColor: '#ccc', height: '2px', width: '20px' }}></div>
+                <div style={{ backgroundColor: '#ccc', height: '2px', width: '20px' }}></div>
+            </div>
+        </div >
     )
 }

@@ -60,4 +60,8 @@
     display: flex;
 }
 
-@media(max-width: 760px) {}
+@media(max-width: 360px) {
+    .name {
+        font-size: 50px;
+    }
+}
