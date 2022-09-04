@@ -56,6 +56,28 @@
     margin-top: 90px;
 }
 
+.othersArea {
+    overflow: hidden;
+}
+
+.gc {
+    margin-top: 200px;
+    display: flex;
+    transition: all ease .2s;
+}
+
+.gc img {
+    min-width: 100vw;
+}
+
+.arrows {
+    display: flex;
+    width: 98vw;
+    margin: auto;
+    justify-content: space-between;
+    height: 0px;
+}
+
 @media (max-width: 1350px) {
     .mainArea {
         width: 100%;

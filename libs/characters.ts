@@ -134,5 +134,146 @@ export const characters: Character[] = [
         ],
         portrait: '/assets/chung-char-1-logo.png',
         videoUrl: 'https://youtu.be/4q7RzZP03iY'
+    },
+    {
+        name: "Ara",
+        alias: "The Martial Artist",
+        portrait: "/assets/ara-char-port.png",
+        videoUrl: "https://youtu.be/D_eBFT38SsU",
+        classes: [
+            {
+                path: 1,
+                name: "Apsara",
+                description: "When she finds out that her brother is turned into a demon because of the Dark El, Ara decides to join the El Search Party to try and bring him back. During her journey, Ara further trains her martial arts as well as her spearmanship and is resolved to follow the path of good. Slowly but surely, she masters the ultimate level of spearmanship! The earth trembles and enemies fall at the slightest movement of her spear!",
+                imageUrl: "/assets/ara-char.png",
+                portrait: "/assets/ara-char-1-port.png"
+            },
+            {
+                path: 2,
+                name: "Devi",
+                description: "During her journey in search of her brother, Ara learns from an ancient tome that she can utilize the powers of darkness to be stronger. She cultivates this darkness and utilizes it to increase her strength while restricting enemies' movements. However, as the darkness takes over, Ara starts to crave the thrill of battle moreand more. Enemies watch out! Ara is ready to let out her dark energy and wipe enemies without a care in the world!",
+                imageUrl: "/assets/ara-char-2.png",
+                portrait: "/assets/ara-char-2-port.png"
+            },
+            {
+                path: 3,
+                name: "Shakti",
+                description: "During her journey in search of her brother, Ara finds out about the ancient technique her ancestors used to capture the Nine-tailed Fox, Eun. Through her tireless research, Ara learns she can undo her ancestor's seal and fully accepts Eun as a partner, allowing her to harness Eun's power to become even more powerful. This newfound power enables Ara to become the very first fox sage! Equipped with her trusty spear and an array of powerful spells, enemies drop like leaves from her unleashed potential!",
+                imageUrl: "/assets/ara-char-3.png",
+                portrait: "/assets/ara-char-3-port.png"
+            },
+            {
+                path: 4,
+                name: "Surya",
+                description: "When Ara borrowed Eun's power, her newfound ability allowed her to see holy beasts. The holy beasts have lost their home and Ara decided that she wanted to help them. In return, the holy beasts lent Ara their powers. Eventually, because she's always trying to help everyone she encounters, the bond between her and the holy beasts begin to weaken. Ara learned that she could not take control of the holy beasts' powers, but instead she should accept that the powers were only lent to her. This understanding led Ara to unlock the spiritual power's true potential. As her journey continues, Ara realized that helping people who suffered from demons is not a deterrent from her goal of chasing Ran. On the contrary, she realized she could help set Ran towards the right path. With the help of the holy beasts, she gains a new understanding of the world. With her full powers unlocked, Ara becomes the all-powerful enlightened guide that lights the path for all creation!",
+                imageUrl: "/assets/ara-char-4.png",
+                portrait: "/assets/ara-char-4-port.png"
+            }
+        ]
+    },
+    {
+        name: "Elesis",
+        alias: "The Red Knight",
+        portrait: "/assets/elesis-char-port.png",
+        videoUrl: "https://youtu.be/AkfdNkByFIw",
+        classes: [
+            {
+                path: 1,
+                name: "Empire Sword",
+                description: "After Elesis leaves her brother, Elsword, to become stronger, she trains hard, eventually becoming the captain of Red Knights of Velder Kingdom. Even after she reunites with Elsword, she continues to refine her swordplay, ultimately becoming Grandmaster and a renowned hero of the people! With her overwhelming sword skills, she brings justice and order to the land while making enemies tremble in fear!",
+                imageUrl: "/assets/elesis-char.png",
+                portrait: "/assets/elesis-char-1-port.png"
+            }
+        ]
+    },
+    {
+        name: "Add",
+        alias: "The Tracer",
+        portrait: "/assets/add-char-portrait.png",
+        videoUrl: "https://youtu.be/0WbxrawUOYI",
+        classes: [
+            {
+                path: 1,
+                name: "Doom Bringer",
+                description: "When Add learns he has traveled into the future, Add becomes obsessed with Nasod technology. Soon after, Add develops a Nasod Armor prototype as well as make significant upgrades to his weapons, to fit his more direct combat style. Eventually, Add decides to enhance his body and overcome human limitations by fusing himself with the Nasod Armor! With the Nasod Armor, Add becomes even more powerful - a tactical force to be reckoned with!",
+                imageUrl: "/assets/add-char.png",
+                portrait: "/assets/add-char-1-portrait.png"
+            }
+        ]
+    },
+    {
+        name: "Luciel",
+        alias: "Duo of Demons",
+        portrait: "/assets/luciel-char-portrait.png",
+        videoUrl: "https://youtu.be/7P2gUIgF2X4",
+        classes: [
+            {
+                path: 1,
+                name: "Catastrophe",
+                description: "Ciel finds Lu in her weakened state and forms a contract together. With the two teaming up, Lu gains the power to induce fear and command beasts of terror. Slowly, as Lu fully regains her power, Ciel also evolves until he also becomes a full-fledged demon. Together, they are known as the Demon Lords of Terror instilling fear into the hearts of their enemies!",
+                imageUrl: "/assets/luciel-char.png",
+                portrait: "/assets/luciel-char-1-portrait.png"
+            }
+        ]
+    },
+    {
+        name: "Rose",
+        alias: "The Empyrean Gunner",
+        portrait: "/assets/rose-char-portrait.png",
+        videoUrl: "https://youtu.be/giY122_XKzg",
+        classes: [
+            {
+                path: 1,
+                name: "Tempest Burster",
+                description: "After being sent to Elrios through a dimensional tear, Rose joins the El Search Party and trains to become stronger so she could fight the Nasods. She continuously modifies her weapons using an El Shard until she begins to have complete mastery of her heavy weapons! With her new railgun's ultimate piercing capabilities, Rose demolishes everything in an instant!",
+                imageUrl: "/assets/rose-char.png",
+                portrait: "/assets/rose-char-1-portrait.png"
+            }
+        ]
+    },
+    {
+        name: "Ain",
+        alias: "God's Agent",
+        portrait: "/assets/ain-char-portrait.png",
+        videoUrl: "https://youtu.be/giY122_XKzg",
+        classes: [
+            {
+                path: 1,
+                name: "Richter",
+                description: "Ain, created by the Goddess Ishmael, joins the El Search Party to restore the El. Disappointed by the humans for the villainous, and cowardly acts they commit, Ain begins to lose faith in humanity and becomes more and more committed to his mission as the Goddess's Emissary. His power from the Goddess enables Ain to use projection magic to attack. As he fully accepts his mission, Ain slowly loses his human element. Ain reaches the height of his Projection Powers and will bring divine judgment to those that defy the goddess!",
+                imageUrl: "/assets/ain-char.png",
+                portrait: "/assets/ain-char-1-portrait.png"
+            }
+        ]
+    },
+    {
+        name: "Laby",
+        alias: "The Mysterious Child",
+        portrait: "/assets/laby-char-portrait.png",
+        videoUrl: "https://youtu.be/tMvL2soUQj8",
+        classes: [
+            {
+                path: 1,
+                name: "Eternity Winner",
+                description: "After Laby leaves the Black Forest with Gaia, the Earth El Master, they encounter many dangerous monsters. When Gaia sees Laby's natural knack for fighting, he offers to give her formal martial arts training. Even after she separates from Gaia, Laby decides to continue to train until she becomes a master using explosive but vibrant hand-to-hand combat techniques. Enemies will flee just at the sight of her stance!",
+                imageUrl: "/assets/laby-char.png",
+                portrait: "/assets/laby-char-1-portrait.png"
+            }
+        ]
+    },
+    {
+        name: "Noah",
+        alias: "The Moon Shadow",
+        portrait: "/assets/noah-char-portrait.png",
+        videoUrl: "https://youtu.be/1OnJyNey_L8",
+        classes: [
+            {
+                path: 1,
+                name: "Liberator",
+                description: "Noah was sealed in the temple shortly after his brother died. Fueled by revenge towards those who murdered his brother, Noah trains and eventually learns to control and master the Power of Shadows. However, as he continues on his path to revenge, Noah realizes that his obsession to revenge his brother trapped him and made him lose sight of his own goal. Noah eventually liberates himself from his vengeful obsession, which finally allows him to rise as the true master of the Shadow. The mastery of his sickle and total control of shadows makes him a fearless fighter in the night!",
+                imageUrl: "/assets/noah-char.png",
+                portrait: "/assets/noah-char-1-portrait.png"
+            }
+        ]
     }
 ]

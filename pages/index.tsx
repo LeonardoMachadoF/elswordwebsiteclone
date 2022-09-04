@@ -1,6 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { ArrowCircleLeft, ArrowCircleRight } from 'phosphor-react'
+import { useState } from 'react'
 import { Banner } from '../components/Banner'
 import { Characters } from '../components/Characters'
 import { Header } from '../components/Header'
@@ -9,6 +11,12 @@ import { NewsItem } from '../components/NewsItem'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
+    const [lMargin, setLMargin] = useState(0);
+
+    const handleClick = () => {
+        lMargin === -100 ? setLMargin(0) : setLMargin(-100);
+    }
+
     return (
         <div className={styles.container}>
             <Head>
@@ -43,6 +51,26 @@ const Home: NextPage = () => {
             </main>
 
             <div className={styles.background} />
+            <div className={styles.othersArea}>
+                <div className={styles.gc} style={{ marginLeft: `${lMargin}vw` }}>
+                    <img src="/assets/gc-banner.png" alt="" />
+                    <img src="/assets/kurtz-banner.jpg" alt="" />
+                </div>
+                <div className={styles.arrows}>
+                    <ArrowCircleLeft
+                        size={26}
+                        color="#fff"
+                        style={{ cursor: 'pointer', position: 'relative', top: '-130px', backgroundColor: 'black', borderRadius: '50%' }}
+                        onClick={handleClick}
+                    />
+                    <ArrowCircleRight
+                        size={26}
+                        color="#fff"
+                        style={{ cursor: 'pointer', position: 'relative', top: '-130px', backgroundColor: 'black', borderRadius: '50%' }}
+                        onClick={handleClick}
+                    />
+                </div>
+            </div>
         </div>
     )
 }
