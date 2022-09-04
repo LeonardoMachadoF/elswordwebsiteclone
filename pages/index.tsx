@@ -51,25 +51,27 @@ const Home: NextPage = () => {
             </main>
 
             <div className={styles.background} />
+
             <div className={styles.othersArea}>
                 <div className={styles.gc} style={{ marginLeft: `${lMargin}vw` }}>
                     <img src="/assets/gc-banner.png" alt="" />
                     <img src="/assets/kurtz-banner.jpg" alt="" />
-                </div>
-                <div className={styles.arrows}>
                     <ArrowCircleLeft
                         size={26}
                         color="#fff"
-                        style={{ cursor: 'pointer', position: 'relative', top: '-130px', backgroundColor: 'black', borderRadius: '50%' }}
+                        className={styles.arrowLeft}
+                        // style={{ cursor: 'pointer', position: 'relative', top: '-130px', backgroundColor: 'black', borderRadius: '50%' }}
                         onClick={handleClick}
                     />
                     <ArrowCircleRight
                         size={26}
                         color="#fff"
-                        style={{ cursor: 'pointer', position: 'relative', top: '-130px', backgroundColor: 'black', borderRadius: '50%' }}
+                        className={styles.arrowRight}
+                        // style={{ cursor: 'pointer', position: 'relative', top: '-130px', backgroundColor: 'black', borderRadius: '50%' }}
                         onClick={handleClick}
                     />
                 </div>
+
             </div>
         </div>
     )

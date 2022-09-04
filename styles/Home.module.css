@@ -4,10 +4,10 @@
 }
 
 .mainArea {
+    flex: 1;
     width: 75%;
     max-width: 1400px;
     margin: auto;
-    height: 1200px;
 }
 
 .newsAndUpdates .label {
@@ -58,10 +58,11 @@
 
 .othersArea {
     overflow: hidden;
+    margin-top: 100px;
+    position: relative;
 }
 
 .gc {
-    margin-top: 200px;
     display: flex;
     transition: all ease .2s;
 }
@@ -75,7 +76,25 @@
     width: 98vw;
     margin: auto;
     justify-content: space-between;
-    height: 0px;
+}
+
+.arrowRight,
+.arrowLeft {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #000;
+    border-radius: 50%;
+}
+
+.arrowLeft {
+    left: 0vw;
+    margin-left: 12px;
+}
+
+.arrowRight {
+    right: 0vw;
+    margin-right: 12px;
 }
 
 @media (max-width: 1350px) {

@@ -235,7 +235,7 @@ export const characters: Character[] = [
         name: "Ain",
         alias: "God's Agent",
         portrait: "/assets/ain-char-portrait.png",
-        videoUrl: "https://youtu.be/giY122_XKzg",
+        videoUrl: "https://youtu.be/1K-zkx5is-s",
         classes: [
             {
                 path: 1,
