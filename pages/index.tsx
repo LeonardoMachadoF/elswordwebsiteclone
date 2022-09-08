@@ -25,7 +25,7 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Header />
+            <Header area='home'/>
             <Banner banners={['/assets/banner01.jpg', '/assets/rena-4th.jpg', '/assets/cool.jpg']} />
             <main className={styles.mainArea}>
                 <div className={styles.newsAndUpdates}>

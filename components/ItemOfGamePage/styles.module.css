@@ -1,0 +1,51 @@
+.itemGame {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.itemGame .img {
+    width: 100%;
+}
+
+.itemGame .img img {
+    width: 100%;
+    height: 80vh;
+}
+
+.info {
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.9);
+    font-family: cinzel;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px;
+}
+
+.info div {
+    margin-bottom: 12px;
+}
+
+.title {
+    width: 90%;
+    font-size: 34px;
+    font-weight: bold;
+    margin-top: 60px;
+}
+
+.subtitle,
+.description {
+    font-size: 22px;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.description {
+    font-size: 20px;
+}

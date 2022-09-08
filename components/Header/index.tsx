@@ -3,7 +3,11 @@ import { CaretDown, MagnifyingGlass } from 'phosphor-react';
 import { NavItem } from '../NavItem';
 import { useEffect, useState } from 'react';
 
-export const Header = () => {
+type Props = {
+    area: string;
+}
+
+export const Header = ({area}: Props) => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const handleMenuClick = () => {
@@ -20,17 +24,23 @@ export const Header = () => {
                         icon={<CaretDown size={16} color="#fff" />}
                         subItens={['game', 'story', 'guides']}
                         sub={true}
+                        area={area}
                     />
-                    <NavItem label='NEWS' />
-                    <NavItem label='CHARACTERS' />
+                    <NavItem label='NEWS'
+                    area={area} />
+                    <NavItem label='CHARACTERS'
+                    area={area} />
                     <NavItem
                         label='COMMUNITY'
+                        area={area}
                         icon={<CaretDown size={16} color="#fff" />}
                         subItens={['gm blog', 'ranking', 'media']}
                         sub={true}
                     />
-                    <NavItem label='DOWNLOAD' />
-                    <NavItem label='SUPORT' />
+                    <NavItem label='DOWNLOAD'
+                    area={area} />
+                    <NavItem label='SUPORT'
+                    area={area} />
                 </nav>
             </div>
             <div className={styles.playArea}>
