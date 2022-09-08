@@ -31,11 +31,6 @@
     margin-left: 12px;
 }
 
-.navArea .nav div {
-    padding: 0px 13px;
-    cursor: pointer;
-}
-
 .playArea {
     display: flex;
     align-items: center;
@@ -75,10 +70,6 @@
         top: 90px;
         background-color: rgba(0, 0, 0, 0.8);
         align-items: flex-end;
-    }
-
-    .navArea .nav div {
-        margin: 20px 0px 20px 0px;
     }
 }
 

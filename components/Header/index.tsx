@@ -1,10 +1,11 @@
 import styles from './styles.module.css';
 import { CaretDown, MagnifyingGlass } from 'phosphor-react';
 import { NavItem } from '../NavItem';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [menuSub, setMenuSub] = useState(false);
 
     const handleMenuClick = () => {
         setMenuOpen(!menuOpen)
@@ -15,10 +16,20 @@ export const Header = () => {
             <div className={styles.navArea}>
                 <img src="/assets/es-logo.png" alt="" className={styles.logo} />
                 <nav className={styles.nav} style={{ display: menuOpen ? 'flex' : 'none' }}>
-                    <NavItem label='ABOUT' icon={<CaretDown size={16} color="#fff" />} />
+                    <NavItem
+                        label='ABOUT'
+                        icon={<CaretDown size={16} color="#fff" />}
+                        subItens={['game', 'story', 'guides']}
+                        sub={true}
+                    />
                     <NavItem label='NEWS' />
                     <NavItem label='CHARACTERS' />
-                    <NavItem label='COMMUNITY' icon={<CaretDown size={16} color="#fff" />} />
+                    <NavItem
+                        label='COMMUNITY'
+                        icon={<CaretDown size={16} color="#fff" />}
+                        subItens={['gm blog', 'ranking', 'media']}
+                        sub={true}
+                    />
                     <NavItem label='DOWNLOAD' />
                     <NavItem label='SUPORT' />
                 </nav>

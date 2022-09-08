@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import ReactPlayer from 'react-player/youtube'
+import ReactPlayer from 'react-player/lazy'
 import { useCharacterContext } from '../../contexts/character/context';
 import { Character, ClassType } from '../../libs/characters';
 import { OtherClasses } from '../OtherClasses';
