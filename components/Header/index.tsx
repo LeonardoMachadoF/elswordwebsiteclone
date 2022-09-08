@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 
 export const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [menuSub, setMenuSub] = useState(false);
 
     const handleMenuClick = () => {
         setMenuOpen(!menuOpen)
@@ -15,7 +14,7 @@ export const Header = () => {
         <div className={styles.container}>
             <div className={styles.navArea}>
                 <img src="/assets/es-logo.png" alt="" className={styles.logo} />
-                <nav className={styles.nav} style={{ display: menuOpen ? 'flex' : 'none' }}>
+                <nav className={styles.nav} style={{ marginRight: menuOpen ? 0 : '-100vw', left: menuOpen ? 0 : '100%' }}>
                     <NavItem
                         label='ABOUT'
                         icon={<CaretDown size={16} color="#fff" />}

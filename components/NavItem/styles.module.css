@@ -4,6 +4,13 @@
     cursor: pointer;
 }
 
+.cont {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 90px;
+}
+
 .head:hover {
     color: #ffb300;
 }
@@ -38,6 +45,10 @@
 @media (max-width: 560px) {
     .item {
         margin: 20px 0px 20px 0px;
+    }
+
+    .cont {
+        height: auto;
     }
 
     .head {
