@@ -1,0 +1,53 @@
+.container {
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+    flex-direction: column;
+}
+
+.stories {
+    display: flex;
+}
+
+.carrousel {
+    display: flex;
+}
+
+.arrows {
+    margin: auto;
+    display: flex;
+    width: 150px;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 999;
+    font-size: 20px;
+    margin-top: 120px;
+}
+
+.arrows .numberArea {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 24px;
+    color: #ccc;
+}
+
+.numberArea div:first-child {
+    color: #373759;
+}
+
+.arrows .numberArea {
+    display: flex;
+}
+
+.arrows .arrowRight,
+.arrows .arrowLeft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #000;
+}

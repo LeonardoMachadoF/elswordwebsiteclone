@@ -9,7 +9,7 @@ type Props = {
     subItens?: string[];
     sub?: boolean;
     area: string;
-    slug?: string;
+    slug: string;
 }
 
 export const NavItem = ({ label, icon, sub, subItens, area, slug }: Props) => {
@@ -25,7 +25,7 @@ export const NavItem = ({ label, icon, sub, subItens, area, slug }: Props) => {
         <div className={styles.item}>
             {!sub &&
                 <div className={styles.cont}>
-                    <div className={styles.head} onMouseEnter={e => setMenuSub(true)} style={{ color: (area === (label.toLowerCase())) ? '#ffb300' : '' }}>{label} {icon}</div>
+                    <div className={styles.head} onClick={() => handleItemClick(slug)} onMouseEnter={e => setMenuSub(true)} style={{ color: (area === (label.toLowerCase())) ? '#ffb300' : '' }}>{label} {icon}</div>
                 </div>
 
             }

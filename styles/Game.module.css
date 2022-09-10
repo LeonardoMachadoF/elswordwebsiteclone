@@ -7,11 +7,21 @@
     justify-content: center;
     align-items: center;
     padding-bottom: 40px;
-    scale: 0.9;
-    transition: all ease .3s;
-    cursor: pointer;
+
 }
 
-.play:hover {
+.play img {
+    transition: all ease .3s;
+    cursor: pointer;
+    scale: 0.9;
+}
+
+.play img:hover {
     scale: 1;
+}
+
+@media (max-width: 680px) {
+    .play img {
+        width: 80%;
+    }
 }

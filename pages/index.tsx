@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import { ArrowCircleLeft, ArrowCircleRight } from 'phosphor-react'
 import { useState } from 'react'
 import { Banner } from '../components/Banner'
@@ -25,7 +24,7 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Header area='home'/>
+            <Header area='home' />
             <Banner banners={['/assets/banner01.jpg', '/assets/rena-4th.jpg', '/assets/cool.jpg']} />
             <main className={styles.mainArea}>
                 <div className={styles.newsAndUpdates}>
@@ -47,7 +46,7 @@ const Home: NextPage = () => {
                         <NewsAndGuides category='GUIDES' imageUrl='   /assets/banner-guides.jpg' />
                     </div>
                 </div>
-                <Characters />
+                <div id='characters'><Characters /></div>
             </main>
 
             <div className={styles.background} />

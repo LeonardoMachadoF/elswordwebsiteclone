@@ -28,22 +28,36 @@ export const Header = ({ area }: Props) => {
                         subItens={['game', 'story', 'guides']}
                         sub={true}
                         area={area}
+                        slug='about'
                     />
-                    <NavItem label='NEWS'
-                        area={area} />
-                    <NavItem label='CHARACTERS'
-                        area={area} />
+                    <NavItem
+                        label='NEWS'
+                        area={area}
+                        slug='news'
+                    />
+                    <NavItem
+                        label='CHARACTERS'
+                        slug='#characters'
+                        area={area}
+                    />
                     <NavItem
                         label='COMMUNITY'
                         area={area}
+                        slug='community'
                         icon={<CaretDown size={16} color="#fff" />}
                         subItens={['gm blog', 'ranking', 'media']}
                         sub={true}
                     />
-                    <NavItem label='DOWNLOAD'
-                        area={area} />
-                    <NavItem label='SUPORT'
-                        area={area} />
+                    <NavItem
+                        label='DOWNLOAD'
+                        area={area}
+                        slug='download'
+                    />
+                    <NavItem
+                        label='SUPORT'
+                        slug='suport'
+                        area={area}
+                    />
                 </nav>
             </div>
             <div className={styles.playArea}>
