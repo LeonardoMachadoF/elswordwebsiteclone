@@ -2,12 +2,13 @@ import styles from './styles.module.css';
 import { CaretDown, MagnifyingGlass } from 'phosphor-react';
 import { NavItem } from '../NavItem';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 type Props = {
     area: string;
 }
 
-export const Header = ({area}: Props) => {
+export const Header = ({ area }: Props) => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const handleMenuClick = () => {
@@ -17,7 +18,9 @@ export const Header = ({area}: Props) => {
     return (
         <div className={styles.container}>
             <div className={styles.navArea}>
-                <img src="/assets/es-logo.png" alt="" className={styles.logo} />
+                <Link href={'/'}>
+                    <img src="/assets/es-logo.png" alt="" className={styles.logo} />
+                </Link>
                 <nav className={styles.nav} style={{ marginRight: menuOpen ? 0 : '-100vw', left: menuOpen ? 0 : '100%' }}>
                     <NavItem
                         label='ABOUT'
@@ -27,9 +30,9 @@ export const Header = ({area}: Props) => {
                         area={area}
                     />
                     <NavItem label='NEWS'
-                    area={area} />
+                        area={area} />
                     <NavItem label='CHARACTERS'
-                    area={area} />
+                        area={area} />
                     <NavItem
                         label='COMMUNITY'
                         area={area}
@@ -38,9 +41,9 @@ export const Header = ({area}: Props) => {
                         sub={true}
                     />
                     <NavItem label='DOWNLOAD'
-                    area={area} />
+                        area={area} />
                     <NavItem label='SUPORT'
-                    area={area} />
+                        area={area} />
                 </nav>
             </div>
             <div className={styles.playArea}>
