@@ -6,8 +6,9 @@ import { Banner } from '../components/Banner'
 import { Characters } from '../components/Characters'
 import { Header } from '../components/Header'
 import { NewsAndGuides } from '../components/NewsAndGuides'
-import { NewsItem } from '../components/NewsItem'
-import styles from '../styles/Home.module.css'
+import { NewsItem } from '../components/NewsItem';
+import ParticlesComponent from '../components/Particles';
+import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
     const [lMargin, setLMargin] = useState(0);
@@ -50,6 +51,7 @@ const Home: NextPage = () => {
             </main>
 
             <div className={styles.background} />
+            <ParticlesComponent />
 
             <div className={styles.othersArea}>
                 <div className={styles.gc} style={{ marginLeft: `${lMargin}vw` }}>
