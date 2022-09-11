@@ -49,9 +49,19 @@
 
     .cont {
         height: auto;
+        flex-direction: column;
     }
 
     .head {
         line-height: normal;
+    }
+
+    .sub {
+        position: static;
+        opacity: 1 !important;
+        border-top: 0;
+        background-color: transparent;
+        text-align: end;
+        font-size: 14px;
     }
 }

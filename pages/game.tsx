@@ -10,7 +10,7 @@ const Game = () => {
                 <title>Elsword - Game</title>
             </Head>
 
-            <Header area={'game'} />
+            <Header area={'about'} />
             <ItemOfGamePage
                 imageUrl='/assets/about-section-1.jpg'
                 title='ELSWORD IS A FREE-TO-PLAY HACK AND SLASH ONLINE ACTION MMORPG'

@@ -1,7 +1,7 @@
 import styles from './styles.module.css';
 import { CaretDown, MagnifyingGlass } from 'phosphor-react';
 import { NavItem } from '../NavItem';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 
 type Props = {

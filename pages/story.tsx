@@ -17,7 +17,7 @@ const Story = () => {
 
     return (
         <div className={styles.container}>
-            <Header area="story" />
+            <Header area="about" />
             <div className={styles.stories}>
                 <div className={styles.carrousel} style={{ marginLeft: `${-((activeItem - 1) * 100)}%` }}>
                     {stories.map((s: Story) => {

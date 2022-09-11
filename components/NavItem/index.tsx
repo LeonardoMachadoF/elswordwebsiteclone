@@ -18,7 +18,9 @@ export const NavItem = ({ label, icon, sub, subItens, area, slug }: Props) => {
     const handleItemClick = (i: string) => {
         router.push(`/${i}`);
     };
-
+    useEffect(() => {
+        setMenuSub(window.innerWidth <= 560)
+    }, [])
 
     return (
 
@@ -38,10 +40,24 @@ export const NavItem = ({ label, icon, sub, subItens, area, slug }: Props) => {
             }
             {sub && subItens &&
                 <div className={styles.cont} onMouseLeave={e => setMenuSub(false)}>
-                    <div className={styles.head} onMouseEnter={e => setMenuSub(true)} style={{ color: subItens.indexOf(area) > -1 ? '#ffb300' : '' }}>{label} {icon}</div>
+                    <div
+                        className={styles.head}
+                        onMouseEnter={e => setMenuSub(true)}
+                        style={{ color: (area === (label.toLowerCase())) ? '#ffb300' : '' }}
+                    >
+                        {label} {icon}
+                    </div>
                     {menuSub &&
                         <div className={styles.sub} style={{ opacity: menuSub ? 1 : 0 }}>
-                            {subItens.map((i: string, k: number) => <p onClick={() => handleItemClick(i)} key={`${i}k`} style={{ color: area === i.toLowerCase() ? '#ffb300' : '' }}>{i.toUpperCase()}</p>)}
+                            {subItens.map((i: string, k: number) => (
+                                <p
+                                    onClick={() => handleItemClick(i)}
+                                    key={`${i}${k}`}
+                                    style={{ color: router.asPath.split('/')[1] === i ? '#ffb300' : '' }}
+                                >
+                                    {i.toUpperCase()}
+                                </p>
+                            ))}
                         </div>
                     }
                 </div>

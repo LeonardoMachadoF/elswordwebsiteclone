@@ -65,9 +65,3 @@
         font-size: 50px;
     }
 }
-
-@media(max-width: 1200px) {
-    .characterImage img {
-        max-width: 55%;
-    }
-}
