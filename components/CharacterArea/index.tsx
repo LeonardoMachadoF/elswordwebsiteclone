@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player/lazy'
 import { useCharacterContext } from '../../contexts/character/context';
+import { useScaleContext } from '../../contexts/opacity/context';
 import { Character, ClassType } from '../../libs/characters';
 import { OtherClasses } from '../OtherClasses';
 import styles from './styles.module.css';
@@ -11,16 +12,21 @@ type Props = {
 
 export const CharacterArea = ({ character }: Props) => {
     const { activeClass, setActiveClass } = useCharacterContext();
+    const { scale, setScale } = useScaleContext();
     const [url, setUrl] = useState('');
+
 
     useEffect(() => {
         setUrl(character?.videoUrl as string);
     }, [url, character])
+    useEffect(() => {
+        setScale(1);
+    }, [character, activeClass])
 
     return (
         <div className={styles.container}>
             <div className={styles.characterImage}>
-                <img src={character.classes[activeClass - 1].imageUrl} alt="" />
+                <img src={character.classes[activeClass - 1].imageUrl} alt="" style={{ scale: scale ? `${scale}` : '0', transition: 'all ease 2s' }} />
             </div>
             <div className={styles.characterInfo}>
                 <div className={styles.name}>{character.name.toUpperCase()}</div>
