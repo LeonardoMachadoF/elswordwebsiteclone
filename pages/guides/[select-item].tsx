@@ -46,10 +46,12 @@ const SelectCharacters = () => {
                                 <CaretDoubleRight size={12} color="#050505" />
                                 Guides
                                 <CaretDoubleRight size={12} color="#050505" />
-                                {router.asPath.split('/')[2].split('-').map((i: string) => {
+                                {router.asPath.split('/')[2].split('-').map((i: string, k: number) => {
                                     return (
                                         <span
-                                            style={{ marginLeft: '4px' }}>
+                                            style={{ marginLeft: '4px' }}
+                                            key={k}
+                                        >
                                             {i[0].toUpperCase()}{i.substring(1)}
                                         </span>
                                     )
