@@ -2,6 +2,7 @@ import styles from './styles.module.css';
 import { Character } from "../../libs/characters"
 import { useCharacterContext } from '../../contexts/character/context';
 import { useScaleContext } from '../../contexts/opacity/context';
+import { wait500 } from '../../libs/wait';
 
 type Props = {
     char: Character;
@@ -14,7 +15,7 @@ export const Portrait = ({ char, setActiveCharacter, activeCharacter }: Props) =
     const { setScale } = useScaleContext();
     const handleClick = async () => {
         setScale(0);
-        await new Promise((resolve) => setTimeout(resolve, 300));
+        await wait500();
         setActiveClass(1);
         setActiveCharacter(char.name);
     }

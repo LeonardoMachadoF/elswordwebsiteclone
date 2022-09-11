@@ -19,6 +19,7 @@ export const CharacterArea = ({ character }: Props) => {
     useEffect(() => {
         setUrl(character?.videoUrl as string);
     }, [url, character])
+
     useEffect(() => {
         setScale(1);
     }, [character, activeClass])

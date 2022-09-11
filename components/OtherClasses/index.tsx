@@ -1,5 +1,6 @@
 import { useScaleContext } from '../../contexts/opacity/context';
 import { ClassType } from '../../libs/characters';
+import { wait500 } from '../../libs/wait';
 import styles from './styles.module.css';
 
 type Props = {
@@ -13,7 +14,7 @@ export const OtherClasses = ({ activeClass, setActiveClass, path }: Props) => {
 
     const handleClick = async () => {
         setScale(0);
-        await new Promise((resolve) => setTimeout(resolve, 300));
+        await wait500();
         setActiveClass(path.path);
     }
 
