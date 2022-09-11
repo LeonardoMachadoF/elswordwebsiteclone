@@ -51,3 +51,14 @@
     border-radius: 50%;
     background-color: #000;
 }
+
+@media (max-width: 900px) {
+    .arrows .controlActive {
+        color: #ddd !important;
+    }
+
+    .arrows div {
+        color: #fff !important;
+        text-shadow: 2px 2px 2px #000;
+    }
+}

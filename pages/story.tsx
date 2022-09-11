@@ -32,7 +32,7 @@ const Story = () => {
                     <CaretLeft size={16} color="#ffffff" weight="bold" />
                 </div>
                 <div className={styles.numberArea}>
-                    <div>{activeItem}</div>
+                    <div className={styles.controlActive}>{activeItem}</div>
                     <div style={{ height: '40px', backgroundColor: '#000', width: '3px' }}></div>
                     <div>{stories.length}</div>
                 </div>
