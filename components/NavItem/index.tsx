@@ -16,6 +16,7 @@ export const NavItem = ({ label, icon, sub, subItens, area, slug }: Props) => {
     const [menuSub, setMenuSub] = useState(false);
     const router = useRouter();
     const handleItemClick = (i: string) => {
+        i === 'guides' ? i = 'guides/select-characters' : '';
         router.push(`/${i}`);
     };
     useEffect(() => {

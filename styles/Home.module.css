@@ -85,6 +85,7 @@
     transform: translateY(-50%);
     background-color: #000;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .arrowLeft {

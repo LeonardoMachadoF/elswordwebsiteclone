@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import { CaretDoubleRight } from 'phosphor-react';
 import { ItemComponentGuide } from '../../components/ItemComponentGuide';
 import { ItemComponent } from '../../components/ItemComponent';
+import Head from 'next/head';
 
 const SelectCharacters = () => {
     const router = useRouter();
@@ -14,6 +15,10 @@ const SelectCharacters = () => {
 
     return (
         <div className={styles.container}>
+            <Head>
+                <title>Elsword - Guides</title>
+            </Head>
+            
             <Header area="about" />
             <div className={styles.mainArea}>
                 <div className={styles.mainHeader}>

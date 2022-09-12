@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { CaretLeft, CaretRight } from "phosphor-react";
 import { useState } from "react";
 import { Header } from "../components/Header";
@@ -17,6 +18,9 @@ const Story = () => {
 
     return (
         <div className={styles.container}>
+            <Head>
+                <title>Elsword - Story</title>
+            </Head>
             <Header area="about" />
             <div className={styles.stories}>
                 <div className={styles.carrousel} style={{ marginLeft: `${-((activeItem - 1) * 100)}%` }}>
