@@ -8,17 +8,19 @@ import { CaretDoubleRight } from 'phosphor-react';
 import { ItemComponentGuide } from '../../components/ItemComponentGuide';
 import { ItemComponent } from '../../components/ItemComponent';
 import Head from 'next/head';
+import { MallItemsOptions } from '../../components/MallItemsOptions';
 
 const SelectCharacters = () => {
     const router = useRouter();
     const pageOne = ['select-characters', 'attendance-event', 'prof-phoru-growth-guide', 'mentor-pupil-system', 'steam'];
+    const pageTwo = ['item-mall-security', 'security-pin-system', 'account-secure', 'restoration-policy']
 
     return (
         <div className={styles.container}>
             <Head>
                 <title>Elsword - Guides</title>
             </Head>
-            
+
             <Header area="about" />
             <div className={styles.mainArea}>
                 <div className={styles.mainHeader}>
@@ -31,7 +33,7 @@ const SelectCharacters = () => {
                                 <img src="/assets/thumb-getting-started.png" alt="" />
                             </Link>
                         </div>
-                        <div className={styles.img} style={{ filter: router.asPath.split('/')[2] === 'item-mall-security' ? 'grayscale(0%)' : 'grayscale(100%)' }}>
+                        <div className={styles.img} style={{ filter: pageTwo.indexOf(router.asPath.split('/')[2]) > -1 ? 'grayscale(0%)' : 'grayscale(100%)' }}>
                             <Link href={'/guides/item-mall-security'}>
                                 <img src="/assets/thumb-itemmall-security.png" alt="" />
                             </Link>
@@ -41,7 +43,9 @@ const SelectCharacters = () => {
                     {pageOne.indexOf(router.asPath.split('/')[2]) > -1 &&
                         <SelectCharactersItemsOption />
                     }
-
+                    {pageTwo.indexOf(router.asPath.split('/')[2]) > -1 &&
+                        <MallItemsOptions />
+                    }
 
                     <div>
 

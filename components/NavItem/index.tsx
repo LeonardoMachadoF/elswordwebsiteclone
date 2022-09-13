@@ -32,7 +32,6 @@ export const NavItem = ({ label, icon, sub, subItens, area, slug }: Props) => {
                         className={styles.head}
                         onClick={() => handleItemClick(slug)}
                         onMouseEnter={e => setMenuSub(true)}
-                        style={{ color: (area === (label.toLowerCase())) ? '#ffb300' : '' }}
                     >
                         {label} {icon}
                     </div>

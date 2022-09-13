@@ -1,0 +1,21 @@
+.mainItems {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.mainItems img {
+    width: 24%;
+}
+
+@media (max-width: 820px) {
+    .mainItems {
+        flex-wrap: wrap;
+    }
+
+    .mainItems img {
+        width: 80%;
+        margin: auto;
+    }
+}
