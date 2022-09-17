@@ -1,4 +1,4 @@
-import { useScaleContext } from '../../contexts/opacity/context';
+import { useCharacterContext } from '../../contexts/character/context';
 import { ClassType } from '../../libs/characters';
 import { wait500 } from '../../libs/wait';
 import styles from './styles.module.css';
@@ -10,7 +10,7 @@ type Props = {
 }
 
 export const OtherClasses = ({ activeClass, setActiveClass, path }: Props) => {
-    const { setScale } = useScaleContext();
+    const { setScale } = useCharacterContext();
 
     const handleClick = async () => {
         setScale(0);

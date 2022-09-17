@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player/lazy'
 import { useCharacterContext } from '../../contexts/character/context';
-import { useScaleContext } from '../../contexts/opacity/context';
 import { Character, ClassType } from '../../libs/characters';
 import { OtherClasses } from '../OtherClasses';
 import styles from './styles.module.css';
@@ -11,8 +10,7 @@ type Props = {
 }
 
 export const CharacterArea = ({ character }: Props) => {
-    const { activeClass, setActiveClass } = useCharacterContext();
-    const { scale, setScale } = useScaleContext();
+    const { activeClass, setActiveClass, scale, setScale } = useCharacterContext();
     const [url, setUrl] = useState('');
 
 

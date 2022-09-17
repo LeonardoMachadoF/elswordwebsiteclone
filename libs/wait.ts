@@ -1,3 +1,3 @@
 export const wait500 = async () => {
-    return await new Promise((resolve) => setTimeout(resolve, 1000));
+    return await new Promise((resolve) => setTimeout(resolve, 500));
 };
