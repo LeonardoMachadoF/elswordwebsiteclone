@@ -1,6 +1,6 @@
 import styles from './styles.module.css';
 import { CaretDown, MagnifyingGlass } from 'phosphor-react';
-import { NavItem } from '../NavItem';
+import NavItem from '../NavItem';
 import { useState } from 'react';
 import Link from 'next/link';
 

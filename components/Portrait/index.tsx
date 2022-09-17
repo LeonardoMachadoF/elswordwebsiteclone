@@ -8,7 +8,7 @@ type Props = {
     activeCharacter: boolean;
 }
 
-export const Portrait = memo(({ char, setActiveCharacter, activeCharacter }: Props) => {
+const Portrait = ({ char, setActiveCharacter, activeCharacter }: Props) => {
     return (
         <div
             className={styles.portrait}
@@ -18,4 +18,6 @@ export const Portrait = memo(({ char, setActiveCharacter, activeCharacter }: Pro
             <img className={styles.img} src={char.portrait} alt="" />
         </div>
     )
-})
+}
+
+export default memo(Portrait);

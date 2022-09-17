@@ -3,7 +3,7 @@ import { useCharacterContext } from '../../contexts/character/context';
 import { Character, characters } from '../../libs/characters';
 import { wait500 } from '../../libs/wait';
 import { CharacterArea } from '../CharacterArea';
-import { Portrait } from '../Portrait';
+import Portrait from '../Portrait';
 import styles from './styles.module.css';
 
 export const Characters = () => {

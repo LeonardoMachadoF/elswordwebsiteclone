@@ -1,5 +1,5 @@
 import styles from './styles.module.css';
-import { MouseEvent, ReactNode, useEffect, useState } from 'react';
+import { memo, MouseEvent, ReactNode, useEffect, useState } from 'react';
 import Router, { useRouter } from 'next/router';
 
 type Props = {
@@ -12,7 +12,7 @@ type Props = {
     slug: string;
 }
 
-export const NavItem = ({ label, icon, sub, subItens, area, slug }: Props) => {
+const NavItem = ({ label, icon, sub, subItens, area, slug }: Props) => {
     const [menuSub, setMenuSub] = useState(false);
     const router = useRouter();
     const handleItemClick = (i: string) => {
@@ -65,3 +65,5 @@ export const NavItem = ({ label, icon, sub, subItens, area, slug }: Props) => {
         </div>
     )
 }
+
+export default memo(NavItem);
