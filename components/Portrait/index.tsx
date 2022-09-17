@@ -1,6 +1,6 @@
 import styles from './styles.module.css';
 import { Character } from "../../libs/characters"
-import { memo } from 'react';
+import { memo, useEffect } from 'react';
 
 type Props = {
     char: Character;
@@ -13,7 +13,7 @@ const Portrait = ({ char, setActiveCharacter, activeCharacter }: Props) => {
         <div
             className={styles.portrait}
             style={{ filter: activeCharacter ? 'grayscale(0%)' : 'grayscale(100%)' }}
-            onClick={() => setActiveCharacter(char.name)}
+            onClick={() => !activeCharacter ? setActiveCharacter(char.name) : ''}
         >
             <img className={styles.img} src={char.portrait} alt="" />
         </div>
