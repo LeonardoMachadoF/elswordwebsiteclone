@@ -19,12 +19,16 @@ export const Banner = ({ banners }: Props) => {
     return (
         <div className={styles.container}>
             <div className={styles.carrousel} style={{ width: '200%', marginLeft: `${mLeft}vw` }}>
-                {banners &&
+                {banners && banners.length > 1 &&
                     banners.map((banner, index) => {
                         return <img src={banner} key={index} />
                     })
                 }
+
             </div>
+            {banners && banners.length === 1 &&
+                <img style={{ width: '100%' }} src={banners[0]} />
+            }
         </div>
     )
 }

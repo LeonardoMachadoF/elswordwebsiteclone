@@ -25,7 +25,7 @@ export const CharacterArea = ({ character }: Props) => {
     return (
         <div className={styles.container}>
             <div className={styles.characterImage}>
-                <img src={character.classes[activeClass - 1].imageUrl} alt="" style={{ scale: scale ? `${scale}` : '0', transition: 'all ease 2s' }} />
+                <img src={character.classes[activeClass - 1].imageUrl} alt="" style={{ scale: scale ? `${scale}` : '0', transition: 'all ease 1s' }} />
             </div>
             <div className={styles.characterInfo}>
                 <div className={styles.name}>{character.name.toUpperCase()}</div>

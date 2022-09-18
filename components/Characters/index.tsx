@@ -14,9 +14,9 @@ export const Characters = () => {
 
     const handleActiveCharacter = useCallback(async (name: string) => {
         setScale(0);
-        setActiveClass(1);
         await wait500();
         setActiveCharacter(name);
+        setActiveClass(1);
     }, [])
 
     useEffect(() => {

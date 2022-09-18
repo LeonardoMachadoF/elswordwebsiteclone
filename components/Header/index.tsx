@@ -45,7 +45,7 @@ export const Header = ({ area }: Props) => {
                         area={area}
                         slug='community'
                         icon={<CaretDown size={16} color="#fff" />}
-                        subItens={['gm blog', 'ranking', 'media']}
+                        subItens={['gm blog', 'rankings', 'media']}
                         sub={true}
                     />
                     <NavItem
