@@ -9,7 +9,7 @@ export const Banner = ({ banners }: Props) => {
     const [mLeft, setMLeft] = useState(0);
 
     useEffect(() => {
-        setTimeout(() => {
+        if (banners.length > 1) setTimeout(() => {
             mLeft === banners.length * -100 + 100 ? setMLeft(0) : setMLeft(mLeft - 100);
         }, 2000);
     }, [mLeft]);

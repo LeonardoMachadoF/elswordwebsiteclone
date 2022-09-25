@@ -1,14 +1,14 @@
 import styles from './styles.module.css';
 import { CaretDown, MagnifyingGlass } from 'phosphor-react';
 import NavItem from '../NavItem';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import Link from 'next/link';
 
 type Props = {
     area: string;
 }
 
-export const Header = ({ area }: Props) => {
+const Header = ({ area }: Props) => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const handleMenuClick = () => {
@@ -83,3 +83,5 @@ export const Header = ({ area }: Props) => {
         </div >
     )
 }
+
+export default memo(Header);

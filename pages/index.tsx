@@ -4,7 +4,7 @@ import { ArrowCircleLeft, ArrowCircleRight } from 'phosphor-react'
 import { useState } from 'react'
 import { Banner } from '../components/Banner'
 import { Characters } from '../components/Characters'
-import { Header } from '../components/Header'
+import Header from '../components/Header'
 import { NewsAndGuides } from '../components/NewsAndGuides'
 import { NewsItem } from '../components/NewsItem';
 import ParticlesComponent from '../components/Particles';

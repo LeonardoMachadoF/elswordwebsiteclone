@@ -1,5 +1,5 @@
 import styles from '../styles/Game.module.css';
-import { Header } from "../components/Header";
+import Header from "../components/Header";
 import { ItemOfGamePage } from '../components/ItemOfGamePage';
 import Head from 'next/head';
 
@@ -63,6 +63,5 @@ const Game = () => {
         </div>
     )
 }
-
 
 export default Game;

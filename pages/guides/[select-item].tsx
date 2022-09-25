@@ -1,5 +1,5 @@
 import styles from '../../styles/SelectCharacters.module.css';
-import { Header } from "../../components/Header";
+import Header from "../../components/Header";
 import { useState } from 'react';
 import { SelectCharactersItemsOption } from '../../components/SelectCharactersItemsOption';
 import Link from 'next/link';

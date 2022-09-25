@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { CaretLeft, CaretRight } from "phosphor-react";
 import { useState } from "react";
-import { Header } from "../components/Header";
+import Header from "../components/Header";
 import { StoryItem } from "../components/StoryItem";
 import { stories, Story } from "../libs/stories";
 import styles from '../styles/Story.module.css'
