@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 
 export const ItemComponentGuide = () => {
     const router = useRouter();
-    console.log(router.asPath.split('/')[2])
     return (
         <div className={styles.container}>
             {router.asPath.split('/')[2] === 'select-characters' &&
