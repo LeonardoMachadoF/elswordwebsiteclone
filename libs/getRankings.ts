@@ -1,5 +1,3 @@
-import { NextApiHandler } from "next";
-
 import PVPRank from './rankings/pvp.json';
 import PVERank from './rankings/pve.json';
 import PVPRankINT from './rankings/int.json';
@@ -7,9 +5,10 @@ import PVERankINT from './rankings/int-pve.json';
 import { CharacterRankType } from "../types/CharacterRankType";
 
 export const getRankings = {
-    getPvpNaRankings: async (page: string, limit: string, type: string) => {
+    getPvpNaRankings: async (page: string, limit: string, type: string, char: string) => {
         let data: CharacterRankType[] = [];
         let rawData: CharacterRankType[] = [];
+        let filteredArray: CharacterRankType[] = [];
 
         switch (type) {
             case 'pvpna':
@@ -24,6 +23,11 @@ export const getRankings = {
             case 'pveint':
                 rawData = PVERankINT;
                 break;
+        }
+
+        if (char !== 'all') {
+            filteredArray = rawData.filter((i: CharacterRankType) => i.classe.toLowerCase().split(' ').join('-') === char ? i : '');
+            rawData = filteredArray;
         }
 
         let start = (parseInt(page as string) - 1) * parseInt(limit as string);

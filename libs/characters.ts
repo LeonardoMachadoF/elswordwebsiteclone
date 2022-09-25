@@ -440,9 +440,11 @@ export const characters: Character[] = [
 ]
 
 export const getAllClasses = () => {
-    let charactersList: string[] = [];
+    let classes: string[] = [];
     characters.map((c: Character) => (
-        charactersList.push(c.name)
+        c.classes.map((c: ClassType) => {
+            classes.push(c.name);
+        })
     ))
-    return charactersList;
+    return classes;
 }

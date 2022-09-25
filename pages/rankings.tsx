@@ -14,19 +14,23 @@ const Rankings = (rankings: Props) => {
 
     const [category, setCategory] = useState(rankings.type.substring(0, 3));
     const [server, setServer] = useState(rankings.type.substring(3, 5));
-    const [character, setCharacter] = useState('');
+    const [character, setCharacter] = useState(rankings.char);
 
     useEffect(() => {
-        router.push(`/rankings?page=${parseInt(rankings.page)}&limit=${parseInt(rankings.limit)}&type=${category.toLowerCase()}${server.toLowerCase()}`)
-    }, [category, server])
+        router.push(`/rankings?page=${parseInt(rankings.page)}&limit=${parseInt(rankings.limit)}&type=${category.toLowerCase()}${server.toLowerCase()}&char=${character.split(' ').join('-').toLowerCase()}`)
+    }, [category, server, character])
+
+    const handleFirstClick = () => {
+        router.push(`/rankings?page=${1}&limit=${parseInt(rankings.limit)}&type=${rankings.type}&char=${rankings.char}`)
+    }
 
     const handleNextClick = () => {
-        router.push(`/rankings?page=${parseInt(rankings.page) + 1}&limit=${parseInt(rankings.limit)}&type=${rankings.type}`)
+        router.push(`/rankings?page=${parseInt(rankings.page) + 1}&limit=${parseInt(rankings.limit)}&type=${rankings.type}&char=${rankings.char}`)
     }
 
     const handleBeforeClick = () => {
         if (parseInt(rankings.page) > 1)
-            router.push(`/rankings?page=${parseInt(rankings.page) - 1}&limit=${parseInt(rankings.limit)}&type=${rankings.type}`)
+            router.push(`/rankings?page=${parseInt(rankings.page) - 1}&limit=${parseInt(rankings.limit)}&type=${rankings.type}&char=${rankings.char}`)
     }
     return (
         <div className={styles.container}>
@@ -119,6 +123,7 @@ const Rankings = (rankings: Props) => {
                         </table>
 
                         <div className={styles.nav}>
+                            <div className={styles.before} onClick={handleFirstClick}>First</div>
                             <div className={styles.before} onClick={handleBeforeClick}>Before</div>
                             <div className={styles.next} onClick={handleNextClick}>Next</div>
                         </div>
@@ -139,10 +144,11 @@ type Props = {
     type: string;
     classes: string[];
     error: boolean;
+    char: string;
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-    let { page, limit, type } = context.query;
+    let { page, limit, type, char } = context.query;
 
     if (!page) {
         page = "1";
@@ -153,8 +159,11 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     if (!type) {
         type = 'pvpna'
     }
+    if (!char) {
+        char = 'all'
+    }
 
-    let data = await getRankings.getPvpNaRankings(page as string, limit as string, type as string);
+    let data = await getRankings.getPvpNaRankings(page as string, limit as string, type as string, char as string);
 
     if (!page) {
         page = '1';
@@ -170,7 +179,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
                 limit,
                 type,
                 classes,
-                error: true
+                error: true,
+                char
             }
         }
     }
@@ -182,7 +192,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             limit,
             type,
             classes,
-            error: false
+            error: false,
+            char
         }
     }
 } 
