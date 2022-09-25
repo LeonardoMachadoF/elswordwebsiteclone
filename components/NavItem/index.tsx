@@ -17,6 +17,7 @@ const NavItem = ({ label, icon, sub, subItens, area, slug }: Props) => {
     const router = useRouter();
     const handleItemClick = (i: string) => {
         i === 'guides' ? i = 'guides/select-characters' : '';
+        i === 'rankings' ? i = 'rankings?page=1&limit=12&type=pvpna' : '';
         router.push(`/${i}`);
     };
     useEffect(() => {

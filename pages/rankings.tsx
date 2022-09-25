@@ -12,8 +12,8 @@ import { useEffect, useState } from 'react';
 const Rankings = (rankings: Props) => {
     const router = useRouter();
 
-    const [category, setCategory] = useState('');
-    const [server, setServer] = useState('');
+    const [category, setCategory] = useState(rankings.type.substring(0, 3));
+    const [server, setServer] = useState(rankings.type.substring(3, 5));
     const [character, setCharacter] = useState('');
 
     useEffect(() => {
