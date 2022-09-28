@@ -33,6 +33,7 @@ const NavItem = ({ label, icon, sub, subItens, area, slug }: Props) => {
                         className={styles.head}
                         onClick={() => handleItemClick(slug)}
                         onMouseEnter={e => setMenuSub(true)}
+                        style={{ color: (area === (label.toLowerCase())) ? '#ffb300' : '' }}
                     >
                         {label} {icon}
                     </div>
@@ -54,7 +55,7 @@ const NavItem = ({ label, icon, sub, subItens, area, slug }: Props) => {
                                 <p
                                     onClick={() => handleItemClick(i)}
                                     key={`${i}${k}`}
-                                    style={{ color: router.asPath.split('/')[1] === i ? '#ffb300' : '' }}
+                                    style={{ color: router.asPath.split('/')[1].split('?')[0] === i ? '#ffb300' : '' }}
                                 >
                                     {i.toUpperCase()}
                                 </p>

@@ -37,7 +37,7 @@ const Rankings = (rankings: Props) => {
             <Head>
                 <title>Elsword - Rankings</title>
             </Head>
-            <Header area="rankings" />
+            <Header area="community" />
             <Banner banners={['/assets/mh-playerrankings.jpg']} />
             <div className={styles.contentArea}>
                 <div className={styles.filter}>
