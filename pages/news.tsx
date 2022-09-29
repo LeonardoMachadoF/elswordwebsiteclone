@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CategoryItemNewsComponent from "../components/CategoryItemNewsComponent";
 import Header from "../components/Header";
 import styles from '../styles/News.module.css';
@@ -7,10 +7,13 @@ import { NewsType } from "../types/NewsType";
 import { NewsItemComponent } from "../components/NewsItemComponent";
 
 const News = () => {
+    const headerRef = useRef<HTMLDivElement | null>(null)
+
     const [activeArea, setActiveArea] = useState('All')
-    const [page, setPage] = useState(2);
+    const [page, setPage] = useState(1);
     const [news, setNews] = useState<NewsType[] | []>([]);
     const newsPerPage = 12;
+    const numbersOfPage = Math.floor(newsJson.length / newsPerPage);
 
     const topItens = [
         { label: 'All', bgColor: '#30333c' },
@@ -29,10 +32,23 @@ const News = () => {
         setNews(temporaryNews)
     }, [page])
 
+    const handleBeforeClick = () => {
+        if (page > 1) {
+            setPage(page - 1)
+            headerRef.current!.scrollIntoView({ behavior: 'smooth' })
+        }
+    }
+    const handleNextClick = () => {
+        if (page !== numbersOfPage) {
+            setPage(page + 1)
+            headerRef.current!.scrollIntoView({ behavior: 'smooth' })
+        }
+    }
+
     return (
         <div className={styles.container}>
             <Header area="news" />
-            <div className={styles.mainArea}>
+            <div className={styles.mainArea} ref={headerRef}>
 
                 <div className={styles.topArea}>
                     {topItens.map((item) => (
@@ -60,8 +76,8 @@ const News = () => {
             </div>
 
             <div className={styles.navigation}>
-                <div onClick={() => setPage(page - 1)}>BEFORE</div>
-                <div onClick={() => setPage(page + 1)}>NEXT</div>
+                <div onClick={handleBeforeClick}>BEFORE</div>
+                <div onClick={handleNextClick}>NEXT</div>
             </div>
 
 
