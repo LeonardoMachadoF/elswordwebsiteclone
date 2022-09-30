@@ -24,8 +24,8 @@ const Rankings = (rankings: Props) => {
 
 
     useEffect(() => {
-        setList(getRankings.getFilteredByName(search, rankings.type, character));
-    }, [search, category, server, character])
+        setList(getRankings.getFilteredByName(rankings.page, rankings.limit, rankings.type, rankings.char, search));
+    }, [search, rankings])
 
     const handleFirstClick = () => {
         router.push(`/rankings?page=${1}&limit=${parseInt(rankings.limit)}&type=${rankings.type}&char=${rankings.char}`)
