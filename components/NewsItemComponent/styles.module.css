@@ -1,6 +1,9 @@
 .container {
     box-shadow: 0px 0px 5px 0px #c7c7c7;
     background-color: #fff;
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .info {
@@ -33,7 +36,6 @@
 .type {
     padding: 8px;
     border-radius: 3px;
-    background-color: #ff6a00;
 }
 
 .type a {
@@ -63,4 +65,12 @@
 
 .readMode a:hover {
     opacity: 0.6;
+}
+
+
+@media (max-width: 380px) {
+    .container {
+        width: 300px;
+        margin: auto;
+    }
 }

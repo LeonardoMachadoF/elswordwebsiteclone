@@ -5,32 +5,42 @@ import styles from '../styles/News.module.css';
 import newsJson from '../libs/news.json'
 import { NewsType } from "../types/NewsType";
 import { NewsItemComponent } from "../components/NewsItemComponent";
+import { wait500 } from "../libs/wait";
 
 const News = () => {
     const headerRef = useRef<HTMLDivElement | null>(null)
+    const newsPerPage = 12;
 
     const [activeArea, setActiveArea] = useState('All')
     const [page, setPage] = useState(1);
     const [news, setNews] = useState<NewsType[] | []>([]);
-    const newsPerPage = 12;
-    const numbersOfPage = Math.floor(newsJson.length / newsPerPage);
+    const [numbersOfPage, setNumberOfPages] = useState<number>(Math.floor(newsJson.length / newsPerPage));
 
     const topItens = [
         { label: 'All', bgColor: '#30333c' },
-        { label: 'Notice', bgColor: '#30333c' },
-        { label: 'Event', bgColor: '#30333c' },
-        { label: 'Item Mall', bgColor: '#30333c' }
+        { label: 'Notice', bgColor: '#f8424b' },
+        { label: 'Event', bgColor: '#ff6a00' },
+        { label: 'Item Mall', bgColor: '#710eff' }
     ]
 
     useEffect(() => {
         let atualIndex = page * newsPerPage - newsPerPage;
         let temporaryNews = [];
+        let rawNews: NewsType[] = [];
         for (let i = 0; i < newsPerPage; i++) {
-            temporaryNews.push(newsJson[atualIndex])
+            if (activeArea !== 'All') {
+                rawNews = newsJson.filter((news: NewsType) => {
+                    if (news.type.split('[')[1].split(']')[0] === activeArea) return news;
+                })
+            } else {
+                rawNews = [...newsJson]
+            }
+            temporaryNews.push(rawNews[atualIndex])
             atualIndex++
         }
         setNews(temporaryNews)
-    }, [page])
+        setNumberOfPages(Math.floor(rawNews.length / newsPerPage));
+    }, [page, activeArea])
 
     const handleBeforeClick = () => {
         if (page > 1) {
@@ -40,9 +50,15 @@ const News = () => {
     }
     const handleNextClick = () => {
         if (page !== numbersOfPage) {
+            console.log(numbersOfPage, page)
             setPage(page + 1)
             headerRef.current!.scrollIntoView({ behavior: 'smooth' })
         }
+    }
+
+    const handleActiveArea = (label: string) => {
+        setPage(1);
+        setActiveArea(label);
     }
 
     return (
@@ -56,7 +72,7 @@ const News = () => {
                             label={item.label}
                             bgColor={item.bgColor}
                             active={item.label.toLowerCase() === activeArea.toLowerCase()}
-                            setActiveArea={setActiveArea}
+                            setActiveArea={handleActiveArea}
                             key={item.label}
                         />
                     ))}
@@ -68,6 +84,11 @@ const News = () => {
                             <NewsItemComponent
                                 key={news.title}
                                 news={news}
+                                categoryColor={topItens.filter((i) => {
+                                    if (i.label === news.type.split('[')[1].split(']')[0]) {
+                                        return i
+                                    }
+                                })[0].bgColor}
                             />
                         ))
                     }

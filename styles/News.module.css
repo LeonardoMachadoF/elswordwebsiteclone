@@ -1,7 +1,15 @@
 .container {
     min-height: 100vh;
+}
+
+.bg {
     background-image: url('/assets/bg-Security_ITEM-MALL.jpg');
-    background-size: cover;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -10;
 }
 
 .mainArea {
@@ -13,6 +21,7 @@
 .topArea {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .grid {
@@ -33,4 +42,20 @@
 
 .navigation div {
     cursor: pointer;
+}
+
+@media (max-width: 1220px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 750px) {
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .topArea {
+        justify-content: center;
+    }
 }

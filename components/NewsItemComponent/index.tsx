@@ -5,9 +5,11 @@ import styles from './styles.module.css';
 
 type Props = {
     news: NewsType;
+    categoryColor: any;
 }
 
-export const NewsItemComponent = ({ news }: Props) => {
+export const NewsItemComponent = ({ news, categoryColor }: Props) => {
+    console.log(categoryColor)
     return (
         <div className={styles.container}>
             <div>
@@ -20,7 +22,7 @@ export const NewsItemComponent = ({ news }: Props) => {
                 <div className={styles.dataAndType}>
                     <div>{news.data}</div>
                     <div>|</div>
-                    <div className={styles.type}>
+                    <div className={styles.type} style={{ backgroundColor: categoryColor }}>
                         <Link href={news.categoryLink}>
                             {news.type.split('[')[1].split(']')[0].toUpperCase()}
                         </Link>
