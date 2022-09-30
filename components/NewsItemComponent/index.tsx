@@ -9,7 +9,6 @@ type Props = {
 }
 
 export const NewsItemComponent = ({ news, categoryColor }: Props) => {
-    console.log(categoryColor)
     return (
         <div className={styles.container}>
             <div>

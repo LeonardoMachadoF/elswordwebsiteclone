@@ -51,7 +51,6 @@ const News = () => {
     }
     const handleNextClick = () => {
         if (page !== numbersOfPage) {
-            console.log(numbersOfPage, page)
             setPage(page + 1)
             headerRef.current!.scrollIntoView({ behavior: 'smooth' })
         }

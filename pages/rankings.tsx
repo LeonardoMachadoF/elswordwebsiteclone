@@ -24,8 +24,8 @@ const Rankings = (rankings: Props) => {
 
 
     useEffect(() => {
-        setList(getRankings.getFilteredByName(search, rankings.type));
-    }, [search])
+        setList(getRankings.getFilteredByName(search, rankings.type, character));
+    }, [search, category, server, character])
 
     const handleFirstClick = () => {
         router.push(`/rankings?page=${1}&limit=${parseInt(rankings.limit)}&type=${rankings.type}&char=${rankings.char}`)
@@ -112,7 +112,7 @@ const Rankings = (rankings: Props) => {
                                         style={{ display: 'flex', whiteSpace: 'nowrap', fontSize: '40px', marginLeft: '300px' }}
                                     >Nenhuma resultado Encontrado!</div>
                                 }
-                                {list.length > 0 &&
+                                {list.length > 0 && search.length > 0 &&
                                     list.map((char: CharacterRankType, index: number) => {
                                         if (index < 12)
                                             return (
@@ -135,11 +135,12 @@ const Rankings = (rankings: Props) => {
                                     })
 
                                 }
-                                {list.length <= 0 && search.length === 0 &&
+                                {search.length === 0 &&
                                     rankings.data?.map((char: CharacterRankType) => {
                                         return (
                                             <tr key={`${char.rank}-${char.name}`} style={{ color: 'black' }}>
                                                 <td>
+
                                                     {char.rank.indexOf('.') > -1 ? <img src={char.rank} alt="" style={{ height: '80px' }} /> : `${char.rank}`}
                                                 </td>
                                                 <td style={{ display: 'flex', alignItems: 'center', paddingLeft: '100px', gap: '8px' }}>

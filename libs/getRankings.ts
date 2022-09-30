@@ -43,10 +43,10 @@ export const getRankings = {
         return null;
     },
 
-    getFilteredByName: (name: string, type: string) => {
+    getFilteredByName: (name: string, type: string, character: string | null) => {
         let rawData: CharacterRankType[] = [];
         let filteredArray: CharacterRankType[] = [];
-
+        if (!character) { character = 'all' }
         switch (type) {
             case 'pvpna':
                 rawData = PVPRank;
@@ -62,7 +62,11 @@ export const getRankings = {
                 break;
         }
         rawData.map((i) => {
-            i.name.toLowerCase().indexOf(name.toLowerCase()) > -1 ? filteredArray.push(i) : '';
+            if (character !== 'all') {
+                i.name.toLowerCase().indexOf(name.toLowerCase()) > -1 ? i.classe.toLowerCase() === character ? filteredArray.push(i) : '' : '';
+            } else {
+                i.name.toLowerCase().indexOf(name.toLowerCase()) > -1 ? filteredArray.push(i) : '';
+            }
         })
         return filteredArray;
     }
