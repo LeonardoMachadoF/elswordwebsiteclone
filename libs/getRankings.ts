@@ -5,7 +5,7 @@ import PVERankINT from './rankings/int-pve.json';
 import { CharacterRankType } from "../types/CharacterRankType";
 
 export const getRankings = {
-    getPvpNaRankings: async (page: string, limit: string, type: string, char: string) => {
+    getPvpNaRankings: async (page: string, limit: string, type: string, char: string, name?: string) => {
         let data: CharacterRankType[] = [];
         let rawData: CharacterRankType[] = [];
         let filteredArray: CharacterRankType[] = [];
@@ -41,5 +41,29 @@ export const getRankings = {
             return data;
         }
         return null;
+    },
+
+    getFilteredByName: (name: string, type: string) => {
+        let rawData: CharacterRankType[] = [];
+        let filteredArray: CharacterRankType[] = [];
+
+        switch (type) {
+            case 'pvpna':
+                rawData = PVPRank;
+                break;
+            case 'pvena':
+                rawData = PVERank;
+                break;
+            case 'pvpint':
+                rawData = PVPRankINT;
+                break;
+            case 'pveint':
+                rawData = PVERankINT;
+                break;
+        }
+        rawData.map((i) => {
+            i.name.toLowerCase().indexOf(name.toLowerCase()) > -1 ? filteredArray.push(i) : '';
+        })
+        return filteredArray;
     }
 }

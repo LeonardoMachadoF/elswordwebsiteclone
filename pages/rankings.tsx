@@ -15,10 +15,17 @@ const Rankings = (rankings: Props) => {
     const [category, setCategory] = useState(rankings.type.substring(0, 3));
     const [server, setServer] = useState(rankings.type.substring(3, 5));
     const [character, setCharacter] = useState(rankings.char);
+    const [search, setSearch] = useState('');
+    const [list, setList] = useState<CharacterRankType[]>([]);
 
     useEffect(() => {
         router.push(`/rankings?page=${parseInt(rankings.page)}&limit=${parseInt(rankings.limit)}&type=${category.toLowerCase()}${server.toLowerCase()}&char=${character.split(' ').join('-').toLowerCase()}`)
-    }, [category, server, character])
+    }, [category, server, character]);
+
+
+    useEffect(() => {
+        setList(getRankings.getFilteredByName(search, rankings.type));
+    }, [search])
 
     const handleFirstClick = () => {
         router.push(`/rankings?page=${1}&limit=${parseInt(rankings.limit)}&type=${rankings.type}&char=${rankings.char}`)
@@ -77,7 +84,7 @@ const Rankings = (rankings: Props) => {
 
                     <div className={styles.rightArea}>
                         <p>SEARCH: </p>
-                        <input type="text" name="" id="" />
+                        <input type="text" value={search} onChange={e => setSearch(e.target.value)} />
                     </div>
                 </div>
                 <div className={styles.lastUptade}>
@@ -100,25 +107,54 @@ const Rankings = (rankings: Props) => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {rankings.data?.map((char: CharacterRankType) => {
-                                    return (
-                                        <tr key={`${char.rank}-${char.name}`} style={{ color: 'black' }}>
-                                            <td>
-                                                {char.rank.indexOf('.') > -1 ? <img src={char.rank} alt="" style={{ height: '80px' }} /> : `${char.rank}`}
-                                            </td>
-                                            <td style={{ display: 'flex', alignItems: 'center', paddingLeft: '100px', gap: '8px' }}>
-                                                <img src={char.img} alt="" />
-                                                {char.name}
-                                            </td>
-                                            <td>{char.classe}</td>
-                                            <td>{char.level}</td>
-                                            <td>
-                                                <img src={char.pvpRank} alt="" />
-                                            </td>
-                                            <td>{char.wins}</td>
-                                        </tr>
-                                    )
-                                })}
+                                {search.length > 0 && list.length === 0 &&
+                                    <div
+                                        style={{ display: 'flex', whiteSpace: 'nowrap', fontSize: '40px', marginLeft: '300px' }}
+                                    >Nenhuma resultado Encontrado!</div>
+                                }
+                                {list.length > 0 &&
+                                    list.map((char: CharacterRankType, index: number) => {
+                                        if (index < 12)
+                                            return (
+                                                <tr key={`${char.rank}-${char.name}`} style={{ color: 'black' }}>
+                                                    <td>
+                                                        {char.rank.indexOf('.') > -1 ? <img src={char.rank} alt="" style={{ height: '80px' }} /> : `${char.rank}`}
+                                                    </td>
+                                                    <td style={{ display: 'flex', alignItems: 'center', paddingLeft: '100px', gap: '8px' }}>
+                                                        <img src={char.img} alt="" />
+                                                        {char.name}
+                                                    </td>
+                                                    <td>{char.classe}</td>
+                                                    <td>{char.level}</td>
+                                                    <td>
+                                                        <img src={char.pvpRank} alt="" />
+                                                    </td>
+                                                    <td>{char.wins}</td>
+                                                </tr>
+                                            )
+                                    })
+
+                                }
+                                {list.length <= 0 && search.length === 0 &&
+                                    rankings.data?.map((char: CharacterRankType) => {
+                                        return (
+                                            <tr key={`${char.rank}-${char.name}`} style={{ color: 'black' }}>
+                                                <td>
+                                                    {char.rank.indexOf('.') > -1 ? <img src={char.rank} alt="" style={{ height: '80px' }} /> : `${char.rank}`}
+                                                </td>
+                                                <td style={{ display: 'flex', alignItems: 'center', paddingLeft: '100px', gap: '8px' }}>
+                                                    <img src={char.img} alt="" />
+                                                    {char.name}
+                                                </td>
+                                                <td>{char.classe}</td>
+                                                <td>{char.level}</td>
+                                                <td>
+                                                    <img src={char.pvpRank} alt="" />
+                                                </td>
+                                                <td>{char.wins}</td>
+                                            </tr>
+                                        )
+                                    })}
                             </tbody>
                         </table>
 

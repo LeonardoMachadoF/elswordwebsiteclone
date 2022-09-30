@@ -1,6 +1,6 @@
 import styles from './styles.module.css';
 import { Character } from "../../libs/characters"
-import { memo, useEffect } from 'react';
+import { memo } from 'react';
 import Image from 'next/image';
 
 type Props = {
