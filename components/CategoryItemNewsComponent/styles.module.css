@@ -8,4 +8,6 @@
     border-radius: 3px;
     justify-content: center;
     box-shadow: 1px 1px 1px 1px #d8d8d8;
+    cursor: pointer;
+    transition: all ease .5s;
 }

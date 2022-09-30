@@ -6,6 +6,7 @@ import newsJson from '../libs/news.json'
 import { NewsType } from "../types/NewsType";
 import { NewsItemComponent } from "../components/NewsItemComponent";
 import { wait500 } from "../libs/wait";
+import Head from "next/head";
 
 const News = () => {
     const headerRef = useRef<HTMLDivElement | null>(null)
@@ -63,6 +64,9 @@ const News = () => {
 
     return (
         <div className={styles.container}>
+            <Head>
+                <title>News | Elsword</title>
+            </Head>
             <Header area="news" />
             <div className={styles.mainArea} ref={headerRef}>
 

@@ -8,6 +8,7 @@
     max-width: 1200px;
     margin: auto;
     margin-top: -4px;
+    overflow-x: scroll;
 }
 
 .filter {
@@ -78,6 +79,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    min-width: 1200px;
 }
 
 .table {
@@ -125,4 +127,32 @@
     cursor: pointer;
     padding: 8px 10px;
     margin-bottom: 30px;
+}
+
+@media (max-width: 1260px) {
+    .contentArea {
+        width: 100%;
+    }
+
+    .filter {
+        width: 1200px;
+        align-items: flex-start;
+        height: fit-content;
+        flex-direction: column;
+    }
+
+    .leftArea {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .filter p {
+        width: 120px;
+    }
+
+    .lastRightArea {
+        width: 1200px;
+        justify-content: flex-start;
+        gap: 40px;
+    }
 }

@@ -17,7 +17,7 @@ export const NewsItemComponent = ({ news, categoryColor }: Props) => {
             </div>
             <div className={styles.info}>
                 <div className={styles.title}>
-                    <Link href={news.title}>{news.title}</Link>
+                    <Link href={news.linkToNews}>{news.title}</Link>
                 </div>
                 <div className={styles.dataAndType}>
                     <div>{news.data}</div>
