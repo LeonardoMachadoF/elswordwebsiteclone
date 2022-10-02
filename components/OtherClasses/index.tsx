@@ -15,7 +15,7 @@ export const OtherClasses = ({ activeClass, setActiveClass, path }: Props) => {
     const handleClick = async () => {
         if (path.path === activeClass) return;
         setScale(0);
-        // await wait500();
+        await wait500();
         setActiveClass(path.path);
     }
 
