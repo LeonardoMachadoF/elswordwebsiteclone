@@ -19,7 +19,7 @@ const Rankings = (rankings: Props) => {
     const [list, setList] = useState<CharacterRankType[]>([]);
 
     useEffect(() => {
-        router.push(`/rankings?page=${parseInt(rankings.page)}&limit=${parseInt(rankings.limit)}&type=${category.toLowerCase()}${server.toLowerCase()}&char=${character.split(' ').join('-').toLowerCase()}`)
+        router.push(`/rankings?page=${parseInt('1')}&limit=${parseInt(rankings.limit)}&type=${category.toLowerCase()}${server.toLowerCase()}&char=${character.split(' ').join('-').toLowerCase()}`)
     }, [category, server, character]);
 
 
@@ -112,7 +112,7 @@ const Rankings = (rankings: Props) => {
                                         style={{ display: 'flex', whiteSpace: 'nowrap', fontSize: '40px', marginLeft: '300px' }}
                                     >Nenhuma resultado Encontrado!</div>
                                 }
-                                {list.length > 0 && search.length > 0 &&
+                                {/* {list.length > 0 && search.length > 0 &&
                                     list.map((char: CharacterRankType, index: number) => {
                                         if (index < 12)
                                             return (
@@ -134,9 +134,9 @@ const Rankings = (rankings: Props) => {
                                             )
                                     })
 
-                                }
-                                {search.length === 0 &&
-                                    rankings.data?.map((char: CharacterRankType) => {
+                                } */}
+                                {list.length > 0 &&
+                                    list.map((char: CharacterRankType) => {
                                         return (
                                             <tr key={`${char.rank}-${char.name}`} style={{ color: 'black' }}>
                                                 <td>
