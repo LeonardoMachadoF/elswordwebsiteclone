@@ -18,6 +18,10 @@ const NavItem = ({ label, icon, sub, subItens, area, slug }: Props) => {
     const handleItemClick = (i: string) => {
         i === 'guides' ? i = 'guides/select-characters' : '';
         i === 'rankings' ? i = 'rankings?page=1&limit=12&type=pvpna&char=all' : '';
+        if (i === 'suport') {
+            router.push(`https://support.koggames.com/`)
+            return
+        }
         router.push(`/${i}`);
     };
     useEffect(() => {
@@ -35,7 +39,7 @@ const NavItem = ({ label, icon, sub, subItens, area, slug }: Props) => {
                         onMouseEnter={e => setMenuSub(true)}
                         style={{ color: (area === (label.toLowerCase())) ? '#ffb300' : '' }}
                     >
-                        {label} {icon}
+                        {label}
                     </div>
                 </div>
 
