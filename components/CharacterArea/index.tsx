@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import ReactPlayer from 'react-player/lazy'
 import { useCharacterContext } from '../../contexts/character/context';
 import { Character, ClassType } from '../../libs/characters';
-import { wait500 } from '../../libs/wait';
 import { OtherClasses } from '../OtherClasses';
 import styles from './styles.module.css';
 
@@ -13,6 +12,7 @@ type Props = {
 export const CharacterArea = ({ character }: Props) => {
     const { activeClass, setActiveClass, scale, setScale } = useCharacterContext();
     const [url, setUrl] = useState('');
+    const imageRef = useRef<HTMLImageElement | null>(null);
 
 
     useEffect(() => {
@@ -20,16 +20,15 @@ export const CharacterArea = ({ character }: Props) => {
     }, [url, character])
 
     useEffect(() => {
-        (async () => {
-            await wait500()
-            setScale(1);
-        })()
-    }, [character, activeClass])
+        imageRef.current?.addEventListener('load', () => {
+            setScale(1)
+        })
+    }, [imageRef.current])
 
     return (
         <div className={styles.container}>
             <div className={styles.characterImage}>
-                <img src={character.classes[activeClass - 1].imageUrl} alt="" style={{ scale: scale ? `${scale}` : '0', transition: 'all ease 1s' }} />
+                <img ref={imageRef} src={character.classes[activeClass - 1].imageUrl} alt="" style={{ scale: scale ? `${scale}` : '0', transition: 'all ease .8s' }} />
             </div>
             <div className={styles.characterInfo}>
                 <div className={styles.name}>{character.name.toUpperCase()}</div>
