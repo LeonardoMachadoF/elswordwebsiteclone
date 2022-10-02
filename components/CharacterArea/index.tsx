@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player/lazy'
 import { useCharacterContext } from '../../contexts/character/context';
 import { Character, ClassType } from '../../libs/characters';
+import { wait500 } from '../../libs/wait';
 import { OtherClasses } from '../OtherClasses';
 import styles from './styles.module.css';
 
@@ -19,7 +20,10 @@ export const CharacterArea = ({ character }: Props) => {
     }, [url, character])
 
     useEffect(() => {
-        setScale(1);
+        (async () => {
+            await wait500()
+            setScale(1);
+        })()
     }, [character, activeClass])
 
     return (
