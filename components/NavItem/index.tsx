@@ -22,6 +22,10 @@ const NavItem = ({ label, icon, sub, subItens, area, slug }: Props) => {
             router.push(`https://support.koggames.com/`)
             return
         }
+        if (i === 'gm-blog') {
+            router.push(`https://elswordblog.koggames.com/`)
+            return
+        }
         router.push(`/${i}`);
     };
     useEffect(() => {
@@ -57,7 +61,7 @@ const NavItem = ({ label, icon, sub, subItens, area, slug }: Props) => {
                         <div className={styles.sub} style={{ opacity: menuSub ? 1 : 0 }}>
                             {subItens.map((i: string, k: number) => (
                                 <p
-                                    onClick={() => handleItemClick(i)}
+                                    onClick={() => handleItemClick(i.split(' ').length === 1 ? i : i.split(' ').join('-'))}
                                     key={`${i}${k}`}
                                     style={{ color: router.asPath.split('/')[1].split('?')[0] === i ? '#ffb300' : '' }}
                                 >
