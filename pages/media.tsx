@@ -1,49 +1,23 @@
-import { useEffect, useRef, useState } from "react";
-import "swiper/css";
-import "swiper/css/navigation";
+import { useMemo, useState } from "react";
 import dynamic from 'next/dynamic'
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 import { Banner } from "../components/Banner";
 import Header from "../components/Header";
 import styles from '../styles/Media.module.css'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { useSwiper } from 'swiper/react';
 import Image from "next/image";
-import { CaretLeft, CaretRight } from "phosphor-react";
+import { Play } from "phosphor-react";
+import { GetServerSideProps } from "next";
+import { getMediaData } from "../libs/getMediaData";
+import SwipperCarrouselMedia from "../components/SwipperCarrouselMedia";
 
-const Media = () => {
-    const [margin, setMargin] = useState(0);
+const Media = (data: Props) => {
+
     const [url, setUrl] = useState('https://youtu.be/YrrNu9DcpRU');
     const [anime, setAnime] = useState(true);
+    const [mediaList, setMediaList] = useState(data.animes);
+    const [playHover, setPlayHover] = useState('');
 
 
-    const sliderRef = useRef<any>(null);
-
-    let videos = [
-        { videoUrl: 'https://youtu.be/YrrNu9DcpRU', imageUrl: '/assets/hqdefault.jpg' },
-        { videoUrl: 'https://youtu.be/3bOcwEW5c4g', imageUrl: '/assets/hqdefault(1).jpg' },
-        { videoUrl: 'https://youtu.be/0dxMD60hvc8', imageUrl: '/assets/hqdefault3.jpg' },
-        { videoUrl: 'https://youtu.be/qy36jnSmYpg', imageUrl: '/assets/hqdefault4.jpg' },
-        { videoUrl: 'https://youtu.be/kFC51BALask', imageUrl: '/assets/hqdefault5.jpg' },
-        { videoUrl: 'https://youtu.be/g_cBWN_NxWI', imageUrl: '/assets/hqdefault6.jpg' },
-        { videoUrl: 'https://youtu.be/keaBxk9B5V0', imageUrl: '/assets/hqdefault8.jpg' }
-    ]
-
-
-
-    const handleClick = () => {
-        if (parseFloat(sliderRef.current!.children[1].children[0].style.transform.split('(')[1].split(',')[0].split('px')[0]) > -800)
-            setMargin(parseFloat(sliderRef.current!.children[1].children[0].style.transform.split('(')[1].split(',')[0].split('px')[0]) - 273.75);
-    }
-
-    const handeBeforeClick = () => {
-        if (parseFloat(sliderRef.current!.children[1].children[0].style.transform.split('(')[1].split(',')[0].split('px')[0]) < 0)
-            setMargin(parseFloat(sliderRef.current!.children[1].children[0].style.transform.split('(')[1].split(',')[0].split('px')[0]) + 273.75);
-    }
-
-    useEffect(() => {
-        sliderRef.current!.children[1].children[0].style.transform = `translate3d(${margin}px, 0px, 0px)`
-    }, [margin])
 
     return (
         <div>
@@ -55,25 +29,11 @@ const Media = () => {
                         FEATURED VIDEOS
                     </h1>
                     <div className={styles.video}>
-                        <ReactPlayer url={url} style={{ margin: 'auto' }} controls width='100%' height='600px' />
+                        {useMemo(() =>
+                            <ReactPlayer url={url} style={{ margin: 'auto' }} controls width='100%' height='600px' />
+                            , [url])}
                     </div>
-                    <div className={styles.swiper} ref={sliderRef}>
-                        <div className={styles.arrowsLeft} onClick={handeBeforeClick}>
-                            {<CaretLeft size={80} color={'#000000'} weight='bold' />}
-                        </div>
-                        <Swiper slidesPerView={4} spaceBetween={15}>
-                            {videos.map((i) => {
-                                return (
-                                    <SwiperSlide key={i.imageUrl}>
-                                        <Image style={{ cursor: 'pointer' }} src={i.imageUrl} height={196} width={260} onClick={() => setUrl(i.videoUrl)} />
-                                    </SwiperSlide>
-                                )
-                            })}
-                        </Swiper>
-                        <div className={styles.arrowsRight} onClick={handleClick}>
-                            {<CaretRight size={80} color={'#000000'} weight='bold' />}
-                        </div>
-                    </div>
+                    <SwipperCarrouselMedia setUrl={setUrl} />
                 </div>
             </div>
             <div className={styles.bg2}>
@@ -82,18 +42,34 @@ const Media = () => {
                     <div className={styles.titleSecond}>
                         <h1
                             style={{ backgroundImage: anime ? `url('/assets/media-on.png')` : `url('/assets/media-off.png')` }}
-                            onClick={e => { setAnime(true) }}
+                            onClick={e => { setAnime(true), setMediaList(data.animes) }}
                         >
                             ANIME
                         </h1>
                         <h1
                             style={{ backgroundImage: anime ? `url('/assets/media-off.png')` : `url('/assets/media-on.png')` }}
-                            onClick={e => { setAnime(false) }}
+                            onClick={e => { setAnime(false); setMediaList(data.videos) }}
                         >
                             VIDEOS
                         </h1>
                     </div>
 
+                    <div className={styles.contentVideos}>
+                        {mediaList &&
+                            mediaList.map((anime) => {
+                                return (
+                                    <div className={styles.dataItem} key={anime.link}>
+                                        <Image src={anime.img} width={320} height={170} />
+                                        <div className={styles.play} onMouseEnter={() => setPlayHover(anime.link)} onMouseLeave={() => setPlayHover('')} style={{ scale: (anime.link === playHover) ? '1.1' : '1', transition: 'all ease .2s', marginLeft: (anime.link === playHover) ? '5px' : '' }}>
+                                            {anime.link === playHover ? <Play size={32} /> : 'PLAY'}
+                                        </div>
+
+                                        <h1>Elsword 4th Path Story</h1>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
                 </div>
             </div>
         </div>
@@ -101,3 +77,28 @@ const Media = () => {
 }
 
 export default Media;
+
+type Props = {
+
+    animes: {
+        link: string;
+        img: string;
+    }[],
+    videos: {
+        link: string;
+        img: string;
+    }[]
+
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+    let { animes, videos } = getMediaData();
+
+
+    return {
+        props: {
+            animes,
+            videos
+        }
+    }
+}
