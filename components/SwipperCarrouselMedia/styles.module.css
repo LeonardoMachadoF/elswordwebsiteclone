@@ -1,0 +1,38 @@
+.swiper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.arrowsRight,
+.arrowsLeft {
+    position: absolute;
+    cursor: pointer;
+}
+
+.arrowsRight {
+    right: 0;
+    transform: translateX(120%);
+}
+
+.arrowsLeft {
+    transform: translateX(-120%);
+}
+
+@media (max-width: 1285px) {
+    .swiper {
+        margin: auto;
+        width: 90%;
+    }
+}
+
+@media (max-width: 820px) {
+    .swiper {
+        width: 100%;
+    }
+
+    .arrowsRight,
+    .arrowsLeft {
+        display: none;
+    }
+}

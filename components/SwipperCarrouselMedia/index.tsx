@@ -1,7 +1,7 @@
 import { memo, useEffect, useRef, useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
-import styles from '../../styles/Media.module.css'
+import styles from './styles.module.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from "next/image";
 import { CaretLeft, CaretRight } from "phosphor-react";
@@ -14,6 +14,7 @@ type Props = {
 const SwipperCarrouselMedia = ({ setUrl }: Props) => {
     const [margin, setMargin] = useState(0);
     const sliderRef = useRef<any>(null);
+    const [sliderPerView, setSliderPerView] = useState(4);
 
     let videos = [
         { videoUrl: 'https://youtu.be/YrrNu9DcpRU', imageUrl: '/assets/hqdefault.jpg' },
@@ -25,7 +26,16 @@ const SwipperCarrouselMedia = ({ setUrl }: Props) => {
         { videoUrl: 'https://youtu.be/keaBxk9B5V0', imageUrl: '/assets/hqdefault8.jpg' }
     ]
 
-
+    useEffect(() => {
+        if (window.innerWidth < 820) {
+            setSliderPerView(2)
+            return;
+        }
+        if (window.innerWidth < 1285) {
+            setSliderPerView(3)
+            return;
+        }
+    }, [])
 
     const handleClick = () => {
         if (parseFloat(sliderRef.current!.children[1].children[0].style.transform.split('(')[1].split(',')[0].split('px')[0]) > -800)
@@ -46,7 +56,7 @@ const SwipperCarrouselMedia = ({ setUrl }: Props) => {
             <div className={styles.arrowsLeft} onClick={handeBeforeClick}>
                 {<CaretLeft size={80} color={'#000000'} weight='bold' />}
             </div>
-            <Swiper slidesPerView={4} spaceBetween={15}>
+            <Swiper slidesPerView={sliderPerView} spaceBetween={15}>
                 {videos.map((i) => {
                     return (
                         <SwiperSlide key={i.imageUrl}>

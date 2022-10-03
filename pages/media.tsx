@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import dynamic from 'next/dynamic'
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 import { Banner } from "../components/Banner";
@@ -16,7 +16,20 @@ const Media = (data: Props) => {
     const [anime, setAnime] = useState(true);
     const [mediaList, setMediaList] = useState(data.animes);
     const [playHover, setPlayHover] = useState('');
+    const [modalOpen, setModalOpen] = useState(false);
+    const [modalUrl, setModalUrl] = useState('');
+    const [heightVideo, setHeightVideo] = useState('65vh');
 
+    useEffect(() => {
+        if (window.innerWidth < 520) {
+            setHeightVideo('28vh')
+            return
+        }
+        if (window.innerWidth < 1100) {
+            setHeightVideo('35vh')
+            return
+        }
+    }, [])
 
 
     return (
@@ -30,8 +43,8 @@ const Media = (data: Props) => {
                     </h1>
                     <div className={styles.video}>
                         {useMemo(() =>
-                            <ReactPlayer url={url} style={{ margin: 'auto' }} controls width='100%' height='600px' />
-                            , [url])}
+                            <ReactPlayer url={url} style={{ margin: 'auto' }} controls width='100%' height={heightVideo} />
+                            , [url, heightVideo])}
                     </div>
                     <SwipperCarrouselMedia setUrl={setUrl} />
                 </div>
@@ -60,7 +73,13 @@ const Media = (data: Props) => {
                                 return (
                                     <div className={styles.dataItem} key={anime.link}>
                                         <Image src={anime.img} width={320} height={170} />
-                                        <div className={styles.play} onMouseEnter={() => setPlayHover(anime.link)} onMouseLeave={() => setPlayHover('')} style={{ scale: (anime.link === playHover) ? '1.1' : '1', transition: 'all ease .2s', marginLeft: (anime.link === playHover) ? '5px' : '' }}>
+                                        <div
+                                            className={styles.play}
+                                            onMouseEnter={() => setPlayHover(anime.link)}
+                                            onMouseLeave={() => setPlayHover('')}
+                                            style={{ scale: (anime.link === playHover) ? '1.1' : '1', transition: 'all ease .2s', marginLeft: (anime.link === playHover) ? '5px' : '' }}
+                                            onClick={() => { setModalUrl(anime.link); setModalOpen(true); }}
+                                        >
                                             {anime.link === playHover ? <Play size={32} /> : 'PLAY'}
                                         </div>
 
@@ -70,6 +89,15 @@ const Media = (data: Props) => {
                             })
                         }
                     </div>
+                </div>
+            </div>
+            <div
+                className={styles.modal}
+                style={{ opacity: modalOpen ? 1 : 0, zIndex: modalOpen ? 999 : -100 }}
+                onClick={() => setModalOpen(false)}
+            >
+                <div className={styles.internModal}>
+                    <ReactPlayer playing={modalOpen} url={modalUrl} style={{ margin: 'auto' }} controls width='80%' height='100%' />
                 </div>
             </div>
         </div>
