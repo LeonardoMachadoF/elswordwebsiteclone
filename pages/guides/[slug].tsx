@@ -7,6 +7,8 @@ import { ItemComponentGuide } from '../../components/ItemComponentGuide';
 import Head from 'next/head';
 import { MallItemsOptions } from '../../components/MallItemsOptions';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import guides from '../../libs/guides.json'
+import { PostType } from '../../types/PostType';
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const pages = ['select-characters', 'attendance-event', 'prof-phoru-growth-guide', 'mentor-pupil-system', 'steam', 'item-mall-security', 'security-pin-system', 'account-secure', 'restoration-policy'];
@@ -22,22 +24,29 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
+    let posts: PostType[] = [];
+    guides.map((i) => {
+        if (Object.keys(i)[0] === context.params!.slug && Object.keys(i)[0] !== undefined) {
+            posts.push(Object.values(i)[0]);
+        }
+    })
     return {
         props: {
             slug: context.params!.slug,
+            posts: posts[0]
         }
     }
 }
 
 type Props = {
     slug: string,
-    pageOne: string[],
-    pageTwo: string[]
+    posts: PostType[]
 }
 
-const SelectCharacters = ({ slug }: Props) => {
+const SelectCharacters = ({ slug, posts }: Props) => {
     const pageOne = ['select-characters', 'attendance-event', 'prof-phoru-growth-guide', 'mentor-pupil-system', 'steam'];
     const pageTwo = ['item-mall-security', 'security-pin-system', 'account-secure', 'restoration-policy']
+    console.log(posts)
     return (
         <div className={styles.container}>
             <Head>
@@ -91,7 +100,7 @@ const SelectCharacters = ({ slug }: Props) => {
                             </div>
                         </div>
 
-                        <ItemComponentGuide slug={slug} />
+                        <ItemComponentGuide slug={slug} posts={posts} />
 
                         {pageOne.indexOf(slug) > -1 &&
                             <SelectCharactersItemsOption slug={slug} />

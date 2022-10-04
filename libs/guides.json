@@ -1,0 +1,218 @@
+[
+    {
+        "select-characters": [
+            {
+                "tipLogo": "/assets/1.png",
+                "tip": "When you first log in to Elsword, you will be welcomed to the Character Creation Screen with over 14 characters to choose from!",
+                "imageUrl": "/assets/img-select-character-1.jpg"
+            },
+            {
+                "tipLogo": "/assets/2.png",
+                "tip": "You can access the New Player Attendance Event by clicking this icon on top of the screen!",
+                "imageUrl": "/assets/img-select-character-2.jpg"
+            },
+            {
+                "tipLogo": "/assets/3.png",
+                "tip": "You can initially create 15 characters on each account! You can create even more characters by purchasing additional character slots",
+                "imageUrl": "/assets/img-select-character-3.jpg"
+            },
+            {
+                "tipLogo": "/assets/4.png",
+                "tip": "TIP: Make sure you don’t skip the tutorial! You’ll gain at least 5 levels!",
+                "imageUrl": "/assets/img-select-character-4.jpg"
+            }
+        ]
+    },
+    {
+        "attendance-event": [
+            {
+                "tipLogo": "/assets/1.png",
+                "tip": "When ysou first log in to Elsword, you will be welcomed to the Character Creation Screen with over 14 characters to choose from!",
+                "imageUrl": "/assets/img-select-character-1.jpg"
+            },
+            {
+                "tipLogo": "/assets/2.png",
+                "tip": "You can access the New Player Attendance Event by clicking this icon on top of the screen!",
+                "imageUrl": "/assets/img-select-character-2.jpg"
+            },
+            {
+                "tipLogo": "/assets/3.png",
+                "tip": "You can initially create 15 characters on each account! You can create even more characters by purchasing additional character slots",
+                "imageUrl": "/assets/img-select-character-3.jpg"
+            },
+            {
+                "tipLogo": "/assets/4.png",
+                "tip": "TIP: Make sure you don’t skip the tutorial! You’ll gain at least 5 levels!",
+                "imageUrl": "/assets/img-select-character-4.jpg"
+            }
+        ]
+    },
+    {
+        "prof-phoru-growth-guide": [
+            {
+                "tipLogo": "/assets/1.png",
+                "tip": "When you first log in to Elsword, you will be welcomed to the Character Creation Screen with over 14 characters to choose from!",
+                "imageUrl": "/assets/img-select-character-1.jpg"
+            },
+            {
+                "tipLogo": "/assets/2.png",
+                "tip": "You can access the New Player Attendance Event by clicking this icon on top of the screen!",
+                "imageUrl": "/assets/img-select-character-2.jpg"
+            },
+            {
+                "tipLogo": "/assets/3.png",
+                "tip": "You can initially create 15 characters on each account! You can create even more characters by purchasing additional character slots",
+                "imageUrl": "/assets/img-select-character-3.jpg"
+            },
+            {
+                "tipLogo": "/assets/4.png",
+                "tip": "TIP: Make sure you don’t skip the tutorial! You’ll gain at least 5 levels!",
+                "imageUrl": "/assets/img-select-character-4.jpg"
+            }
+        ]
+    },
+    {
+        "mentor-pupil-system": [
+            {
+                "tipLogo": "/assets/1.png",
+                "tip": "When you first log in to Elsword, you will be welcomed to the Character Creation Screen with over 14 characters to choose from!",
+                "imageUrl": "/assets/img-select-character-1.jpg"
+            },
+            {
+                "tipLogo": "/assets/2.png",
+                "tip": "You can access the New Player Attendance Event by clicking this icon on top of the screen!",
+                "imageUrl": "/assets/img-select-character-2.jpg"
+            },
+            {
+                "tipLogo": "/assets/3.png",
+                "tip": "You can initially create 15 characters on each account! You can create even more characters by purchasing additional character slots",
+                "imageUrl": "/assets/img-select-character-3.jpg"
+            },
+            {
+                "tipLogo": "/assets/4.png",
+                "tip": "TIP: Make sure you don’t skip the tutorial! You’ll gain at least 5 levels!",
+                "imageUrl": "/assets/img-select-character-4.jpg"
+            }
+        ]
+    },
+    {
+        "steam": [
+            {
+                "tipLogo": "/assets/1.png",
+                "tip": "When you first log in to Elsword, you will be welcomed to the Character Creation Screen with over 14 characters to choose from!",
+                "imageUrl": "/assets/img-select-character-1.jpg"
+            },
+            {
+                "tipLogo": "/assets/2.png",
+                "tip": "You can access the New Player Attendance Event by clicking this icon on top of the screen!",
+                "imageUrl": "/assets/img-select-character-2.jpg"
+            },
+            {
+                "tipLogo": "/assets/3.png",
+                "tip": "You can initially create 15 characters on each account! You can create even more characters by purchasing additional character slots",
+                "imageUrl": "/assets/img-select-character-3.jpg"
+            },
+            {
+                "tipLogo": "/assets/4.png",
+                "tip": "TIP: Make sure you don’t skip the tutorial! You’ll gain at least 5 levels!",
+                "imageUrl": "/assets/img-select-character-4.jpg"
+            }
+        ]
+    },
+    {
+        "item-mall-security": [
+            {
+                "tipLogo": "/assets/1.png",
+                "tip": "When you first log in to Elsword, you will be welcomed to the Character Creation Screen with over 14 characters to choose from!",
+                "imageUrl": "/assets/img-select-character-1.jpg"
+            },
+            {
+                "tipLogo": "/assets/2.png",
+                "tip": "You can access the New Player Attendance Event by clicking this icon on top of the screen!",
+                "imageUrl": "/assets/img-select-character-2.jpg"
+            },
+            {
+                "tipLogo": "/assets/3.png",
+                "tip": "You can initially create 15 characters on each account! You can create even more characters by purchasing additional character slots",
+                "imageUrl": "/assets/img-select-character-3.jpg"
+            },
+            {
+                "tipLogo": "/assets/4.png",
+                "tip": "TIP: Make sure you don’t skip the tutorial! You’ll gain at least 5 levels!",
+                "imageUrl": "/assets/img-select-character-4.jpg"
+            }
+        ]
+    },
+    {
+        "security-pin-system": [
+            {
+                "tipLogo": "/assets/1.png",
+                "tip": "When you first log in to Elsword, you will be welcomed to the Character Creation Screen with over 14 characters to choose from!",
+                "imageUrl": "/assets/img-select-character-1.jpg"
+            },
+            {
+                "tipLogo": "/assets/2.png",
+                "tip": "You can access the New Player Attendance Event by clicking this icon on top of the screen!",
+                "imageUrl": "/assets/img-select-character-2.jpg"
+            },
+            {
+                "tipLogo": "/assets/3.png",
+                "tip": "You can initially create 15 characters on each account! You can create even more characters by purchasing additional character slots",
+                "imageUrl": "/assets/img-select-character-3.jpg"
+            },
+            {
+                "tipLogo": "/assets/4.png",
+                "tip": "TIP: Make sure you don’t skip the tutorial! You’ll gain at least 5 levels!",
+                "imageUrl": "/assets/img-select-character-4.jpg"
+            }
+        ]
+    },
+    {
+        "account-secure": [
+            {
+                "tipLogo": "/assets/1.png",
+                "tip": "When you first log in to Elsword, you will be welcomed to the Character Creation Screen with over 14 characters to choose from!",
+                "imageUrl": "/assets/img-select-character-1.jpg"
+            },
+            {
+                "tipLogo": "/assets/2.png",
+                "tip": "You can access the New Player Attendance Event by clicking this icon on top of the screen!",
+                "imageUrl": "/assets/img-select-character-2.jpg"
+            },
+            {
+                "tipLogo": "/assets/3.png",
+                "tip": "You can initially create 15 characters on each account! You can create even more characters by purchasing additional character slots",
+                "imageUrl": "/assets/img-select-character-3.jpg"
+            },
+            {
+                "tipLogo": "/assets/4.png",
+                "tip": "TIP: Make sure you don’t skip the tutorial! You’ll gain at least 5 levels!",
+                "imageUrl": "/assets/img-select-character-4.jpg"
+            }
+        ]
+    },
+    {
+        "restoration-policy": [
+            {
+                "tipLogo": "/assets/1.png",
+                "tip": "When you first log in to Elsword, you will be welcomed to the Character Creation Screen with over 14 characters to choose from!",
+                "imageUrl": "/assets/img-select-character-1.jpg"
+            },
+            {
+                "tipLogo": "/assets/2.png",
+                "tip": "You can access the New Player Attendance Event by clicking this icon on top of the screen!",
+                "imageUrl": "/assets/img-select-character-2.jpg"
+            },
+            {
+                "tipLogo": "/assets/3.png",
+                "tip": "You can initially create 15 characters on each account! You can create even more characters by purchasing additional character slots",
+                "imageUrl": "/assets/img-select-character-3.jpg"
+            },
+            {
+                "tipLogo": "/assets/4.png",
+                "tip": "TIP: Make sure you don’t skip the tutorial! You’ll gain at least 5 levels!",
+                "imageUrl": "/assets/img-select-character-4.jpg"
+            }
+        ]
+    }
+]

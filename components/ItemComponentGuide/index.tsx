@@ -1,15 +1,28 @@
 import styles from './styles.module.css';
 import { ItemComponent } from '../ItemComponent';
 import { useRouter } from 'next/router';
+import { PostType } from '../../types/PostType';
 
 type Props = {
     slug: string;
+    posts: PostType[]
 }
 
-export const ItemComponentGuide = ({ slug }: Props) => {
+export const ItemComponentGuide = ({ slug, posts }: Props) => {
+    console.log(posts)
     return (
         <div className={styles.container}>
-            {slug === 'select-characters' &&
+            {posts.map((post, k) => {
+                return (
+                    <ItemComponent
+                        key={k}
+                        tipLogo={post.tipLogo}
+                        tip={post.tip}
+                        imageUrl={post.imageUrl}
+                    />
+                )
+            })}
+            {/* {slug === 'select-characters' &&
                 <>
                     <ItemComponent
                         tipLogo='/assets/1.png'
@@ -137,7 +150,7 @@ export const ItemComponentGuide = ({ slug }: Props) => {
                         imageUrl=''
                     />
                 </>
-            }
+            } */}
 
         </div>
     )
