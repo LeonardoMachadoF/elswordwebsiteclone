@@ -1,20 +1,43 @@
 import styles from '../../styles/SelectCharacters.module.css';
 import Header from "../../components/Header";
-import { useState } from 'react';
 import { SelectCharactersItemsOption } from '../../components/SelectCharactersItemsOption';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { CaretDoubleRight } from 'phosphor-react';
 import { ItemComponentGuide } from '../../components/ItemComponentGuide';
-import { ItemComponent } from '../../components/ItemComponent';
 import Head from 'next/head';
 import { MallItemsOptions } from '../../components/MallItemsOptions';
+import { GetStaticPaths, GetStaticProps } from 'next';
 
-const SelectCharacters = () => {
-    const router = useRouter();
+export const getStaticPaths: GetStaticPaths = async () => {
+    const pages = ['select-characters', 'attendance-event', 'prof-phoru-growth-guide', 'mentor-pupil-system', 'steam', 'item-mall-security', 'security-pin-system', 'account-secure', 'restoration-policy'];
+
+    let array: { params: { slug: string } }[] = [];
+    pages.map(i => array.push({ params: { slug: i } }))
+    const paths = array;
+
+    return {
+        paths,
+        fallback: false
+    }
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
+    return {
+        props: {
+            slug: context.params!.slug,
+        }
+    }
+}
+
+type Props = {
+    slug: string,
+    pageOne: string[],
+    pageTwo: string[]
+}
+
+const SelectCharacters = ({ slug }: Props) => {
     const pageOne = ['select-characters', 'attendance-event', 'prof-phoru-growth-guide', 'mentor-pupil-system', 'steam'];
     const pageTwo = ['item-mall-security', 'security-pin-system', 'account-secure', 'restoration-policy']
-
     return (
         <div className={styles.container}>
             <Head>
@@ -27,23 +50,23 @@ const SelectCharacters = () => {
                     <div className={styles.duo}>
                         <div
                             className={styles.img}
-                            style={{ filter: pageOne.indexOf(router.asPath.split('/')[2]) > -1 ? 'grayscale(0%)' : 'grayscale(100%)' }}
+                            style={{ filter: pageOne.indexOf(slug) > -1 ? 'grayscale(0%)' : 'grayscale(100%)' }}
                         >
                             <Link href={'/guides/select-characters'}>
                                 <img src="/assets/thumb-getting-started.png" alt="" />
                             </Link>
                         </div>
-                        <div className={styles.img} style={{ filter: pageTwo.indexOf(router.asPath.split('/')[2]) > -1 ? 'grayscale(0%)' : 'grayscale(100%)' }}>
+                        <div className={styles.img} style={{ filter: pageTwo.indexOf(slug) > -1 ? 'grayscale(0%)' : 'grayscale(100%)' }}>
                             <Link href={'/guides/item-mall-security'}>
                                 <img src="/assets/thumb-itemmall-security.png" alt="" />
                             </Link>
                         </div>
                     </div>
 
-                    {pageOne.indexOf(router.asPath.split('/')[2]) > -1 &&
-                        <SelectCharactersItemsOption />
+                    {pageOne.indexOf(slug) > -1 &&
+                        <SelectCharactersItemsOption slug={slug} />
                     }
-                    {pageTwo.indexOf(router.asPath.split('/')[2]) > -1 &&
+                    {pageTwo.indexOf(slug) > -1 &&
                         <MallItemsOptions />
                     }
 
@@ -55,7 +78,7 @@ const SelectCharacters = () => {
                                 <CaretDoubleRight size={12} color="#050505" />
                                 Guides
                                 <CaretDoubleRight size={12} color="#050505" />
-                                {router.asPath.split('/')[2].split('-').map((i: string, k: number) => {
+                                {slug.split('-').map((i: string, k: number) => {
                                     return (
                                         <span
                                             style={{ marginLeft: '4px' }}
@@ -68,13 +91,10 @@ const SelectCharacters = () => {
                             </div>
                         </div>
 
-                        <ItemComponentGuide />
+                        <ItemComponentGuide slug={slug} />
 
-
-
-
-                        {pageOne.indexOf(router.asPath.split('/')[2]) > -1 &&
-                            <SelectCharactersItemsOption />
+                        {pageOne.indexOf(slug) > -1 &&
+                            <SelectCharactersItemsOption slug={slug} />
                         }
 
                     </div>

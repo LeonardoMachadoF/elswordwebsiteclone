@@ -2,11 +2,14 @@ import styles from './styles.module.css';
 import { ItemComponent } from '../ItemComponent';
 import { useRouter } from 'next/router';
 
-export const ItemComponentGuide = () => {
-    const router = useRouter();
+type Props = {
+    slug: string;
+}
+
+export const ItemComponentGuide = ({ slug }: Props) => {
     return (
         <div className={styles.container}>
-            {router.asPath.split('/')[2] === 'select-characters' &&
+            {slug === 'select-characters' &&
                 <>
                     <ItemComponent
                         tipLogo='/assets/1.png'
@@ -31,7 +34,7 @@ export const ItemComponentGuide = () => {
                 </>
             }
 
-            {router.asPath.split('/')[2] === 'attendance-event' &&
+            {slug === 'attendance-event' &&
                 <>
                     <ItemComponent
                         tipLogo='/assets/1.png'
@@ -51,7 +54,7 @@ export const ItemComponentGuide = () => {
                 </>
             }
 
-            {router.asPath.split('/')[2] === 'prof-phoru-growth-guide' &&
+            {slug === 'prof-phoru-growth-guide' &&
                 <>
                     <ItemComponent
                         tipLogo='/assets/1.png'
@@ -71,7 +74,7 @@ export const ItemComponentGuide = () => {
                 </>
             }
 
-            {router.asPath.split('/')[2] === 'mentor-pupil-system' &&
+            {slug === 'mentor-pupil-system' &&
                 <>
                     <ItemComponent
                         tipLogo='/assets/1.png'
@@ -101,7 +104,7 @@ export const ItemComponentGuide = () => {
                 </>
             }
 
-            {router.asPath.split('/')[2] === 'steam' &&
+            {slug === 'steam' &&
                 <>
                     <ItemComponent
                         tipLogo='/assets/1.png'

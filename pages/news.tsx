@@ -5,7 +5,6 @@ import styles from '../styles/News.module.css';
 import newsJson from '../libs/news.json'
 import { NewsType } from "../types/NewsType";
 import { NewsItemComponent } from "../components/NewsItemComponent";
-import { wait500 } from "../libs/wait";
 import Head from "next/head";
 
 const News = () => {

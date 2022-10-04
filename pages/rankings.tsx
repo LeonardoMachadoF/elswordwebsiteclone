@@ -202,10 +202,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
     let data = await getRankings.getPvpNaRankings(page as string, limit as string, type as string, char as string);
 
-    if (!page) {
-        page = '1';
-    }
-
     let classes = getAllClasses();
 
     if (!data) {

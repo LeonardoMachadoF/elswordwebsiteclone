@@ -6,7 +6,7 @@ import Header from "../components/Header";
 import styles from '../styles/Media.module.css'
 import Image from "next/image";
 import { Play } from "phosphor-react";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import { getMediaData } from "../libs/getMediaData";
 import SwipperCarrouselMedia from "../components/SwipperCarrouselMedia";
 
@@ -119,9 +119,8 @@ type Props = {
 
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
     let { animes, videos } = getMediaData();
-
 
     return {
         props: {
