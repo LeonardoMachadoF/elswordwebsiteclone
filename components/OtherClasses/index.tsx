@@ -7,9 +7,10 @@ type Props = {
     activeClass: number;
     path: ClassType;
     setActiveClass: (path: number) => void;
+    setLoading: (status: boolean) => void;
 }
 
-export const OtherClasses = ({ activeClass, setActiveClass, path }: Props) => {
+export const OtherClasses = ({ activeClass, setActiveClass, path, setLoading }: Props) => {
     const { setScale } = useCharacterContext();
 
     const handleClick = async () => {
@@ -17,6 +18,7 @@ export const OtherClasses = ({ activeClass, setActiveClass, path }: Props) => {
         setScale(0);
         await wait500();
         setActiveClass(path.path);
+        setLoading(true);
     }
 
     return (

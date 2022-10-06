@@ -7,9 +7,11 @@ import styles from './styles.module.css';
 
 type Props = {
     character: Character;
+    loading: boolean;
+    setLoading: (status: boolean) => void;
 }
 
-export const CharacterArea = ({ character }: Props) => {
+export const CharacterArea = ({ character, loading, setLoading }: Props) => {
     const { activeClass, setActiveClass, scale, setScale } = useCharacterContext();
     const [url, setUrl] = useState('');
     const imageRef = useRef<HTMLImageElement | null>(null);
@@ -21,14 +23,26 @@ export const CharacterArea = ({ character }: Props) => {
 
     useEffect(() => {
         imageRef.current?.addEventListener('load', () => {
-            setScale(1)
+            setScale(1);
+            setLoading(false);
         })
+
+        return () => {
+            imageRef.current?.removeEventListener('load', () => {
+
+            })
+        };
     }, [imageRef.current])
+
+
 
     return (
         <div className={styles.container}>
             <div className={styles.characterImage}>
                 <img ref={imageRef} src={character.classes[activeClass - 1].imageUrl} alt="" style={{ scale: scale ? `${scale}` : '0', transition: 'all ease .8s' }} />
+                {loading &&
+                    <div className={styles.loadingSpinner} style={{ position: 'fixed', zIndex: 999, top: '50%' }}></div>
+                }
             </div>
             <div className={styles.characterInfo}>
                 <div className={styles.name}>{character.name.toUpperCase()}</div>
@@ -43,7 +57,7 @@ export const CharacterArea = ({ character }: Props) => {
                 <div className={styles.classesArea}>
                     {character.classes.map((path: ClassType) => {
                         return (
-                            <OtherClasses key={path.name} path={path} activeClass={activeClass} setActiveClass={setActiveClass} />
+                            <OtherClasses key={path.name} path={path} activeClass={activeClass} setActiveClass={setActiveClass} setLoading={setLoading} />
                         )
                     })}
                 </div>

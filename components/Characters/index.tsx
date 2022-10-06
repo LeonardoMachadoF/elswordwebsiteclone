@@ -11,6 +11,7 @@ export const Characters = () => {
 
     const [activeCharacter, setActiveCharacter] = useState('Elsword');
     const [chosenCharacter, setChosenCharacter] = useState<Character>(characters[0]);
+    const [loading, setLoading] = useState(false);
 
     const handleActiveCharacter = useCallback(async (name: string) => {
         setScale(0);
@@ -37,6 +38,7 @@ export const Characters = () => {
                                     char={i}
                                     setActiveCharacter={handleActiveCharacter}
                                     activeCharacter={activeCharacter === i.name}
+                                    setLoading={setLoading}
                                 />
                             )
                         })}
@@ -45,7 +47,7 @@ export const Characters = () => {
                 </div>
             </div>
             <div className={styles.rightArea}>
-                <CharacterArea character={chosenCharacter} />
+                <CharacterArea character={chosenCharacter} loading={loading} setLoading={setLoading} />
             </div>
         </div>
     )
