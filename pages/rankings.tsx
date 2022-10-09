@@ -20,7 +20,7 @@ const Rankings = (rankings: Props) => {
 
     useEffect(() => {
         router.push(`/rankings?page=${parseInt('1')}&limit=${parseInt(rankings.limit)}&type=${category.toLowerCase()}${server.toLowerCase()}&char=${character.split(' ').join('-').toLowerCase()}`)
-    }, [category, server, character, rankings, router]);
+    }, [category, server, character]);
 
 
     useEffect(() => {
