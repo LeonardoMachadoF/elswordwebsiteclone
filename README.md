@@ -1,34 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Projeto Elsword
 
-## Getting Started
+Inicialmente feito como um exercicio simples para a pratica do Next, que se limitaria somente à landing page incial, porém, com o evoluir do projeto vi que poderia ser interessante o ampliar, então, com a ajuda da biblioteca "Puppeteer" eu criei um crawler para buscar as informações do site original para que assim eu conseguisse montar as outras paginas, tais como rankings, news, media, etc... Essa varredura resultou em mais de 70 mil linhas de informação distribuido em diversos arquivos JSON, que consumi para assim montar o site como um todo. 
 
-First, run the development server:
+Para rodar 
 
 ```bash
+git clone https://github.com/LeonardoMachadoF/elswordwebsiteclone *nomedapasta*
+&&
+cd *nomedapasta*
+&&
+npm i
+&&
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Ferramentas e Bibliotecas utilizadas.
+<p>-NextJS</p>
+<p>-TSParticles</p>
+<p>-Swiper</p>
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<a href="https://elswordcloneweb.vercel.app">Website</a>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+![image](https://user-images.githubusercontent.com/103409197/196212620-8d82be71-8978-46c2-a7dd-80f533f8a723.png)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+![image](https://user-images.githubusercontent.com/103409197/196214564-f1c4bbeb-fecc-4e40-9bfe-6d9820eadae7.png)
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![image](https://user-images.githubusercontent.com/103409197/196214739-a344ac6b-ab25-46ef-ad4e-a1cbed813f69.png)
