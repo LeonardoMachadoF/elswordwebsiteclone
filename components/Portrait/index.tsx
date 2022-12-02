@@ -20,7 +20,7 @@ const Portrait = ({ char, setActiveCharacter, activeCharacter, setLoading }: Pro
                 setLoading(true)
             }}
         >
-            <Image className={styles.img} src={char.portrait} alt="" width={150} height={126} />
+            <Image className={styles.img} src={char.portrait} alt="" width={150} height={126} priority />
         </div>
     )
 }
