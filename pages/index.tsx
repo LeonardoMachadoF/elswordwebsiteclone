@@ -9,6 +9,7 @@ import { NewsAndGuides } from '../components/NewsAndGuides'
 import { NewsItem } from '../components/NewsItem';
 import ParticlesComponent from '../components/Particles';
 import styles from '../styles/Home.module.css';
+import Image from 'next/image'
 
 const Home: NextPage = () => {
     const [lMargin, setLMargin] = useState(0);
