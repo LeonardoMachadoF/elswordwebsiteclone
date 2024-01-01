@@ -1,17 +1,15 @@
-## Projeto Elsword
-
 Inicialmente feito como um exercicio simples para a pratica do Next, que se limitaria somente à landing page incial, porém, com o evoluir do projeto vi que poderia ser interessante o ampliar, então, com a ajuda da biblioteca "Puppeteer" eu criei um crawler para buscar as informações do site original para que assim eu conseguisse montar as outras paginas, tais como rankings, news, media, etc... Essa varredura resultou em mais de 70 mil linhas de informação distribuido em diversos arquivos JSON, que consumi para assim montar o site como um todo. 
 
 Para rodar 
 
 ```bash
-git clone https://github.com/LeonardoMachadoF/elswordwebsiteclone *nomedapasta*
-&&
-cd *nomedapasta*
-&&
-npm i
-&&
-npm run dev
+  git clone https://github.com/LeonardoMachadoF/elswordwebsiteclone *nomedapasta*
+  &&
+  cd *nomedapasta*
+  &&
+  npm i
+  &&
+  npm run dev
 ```
 
 ## Ferramentas e Bibliotecas utilizadas.
